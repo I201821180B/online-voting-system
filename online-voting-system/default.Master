@@ -38,5 +38,8 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
+    <div class="panel panel-default">
+        <div class="panel-footer">&copy; 2016, Online Voting System</div>
+    </div>
 </body>
 </html>
