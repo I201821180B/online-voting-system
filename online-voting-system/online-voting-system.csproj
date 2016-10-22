@@ -90,6 +90,7 @@
     <Content Include="js\jquery-3.1.1.min.js" />
     <Content Include="login.aspx" />
     <Content Include="organization\default.aspx" />
+    <Content Include="organization\home.aspx" />
     <Content Include="organization\register.aspx" />
     <Content Include="packages.config" />
     <Content Include="css\glyphicons-halflings-regular.eot" />
@@ -98,6 +99,8 @@
     <Content Include="css\glyphicons-halflings-regular.woff2" />
     <Content Include="default.Master" />
     <Content Include="organization\organization.Master" />
+    <Content Include="organization\org_home.Master" />
+    <Content Include="logout.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -153,12 +156,26 @@
     <Compile Include="organization\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="organization\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="organization\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="organization\organization.Master.cs">
       <DependentUpon>organization.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="organization\organization.Master.designer.cs">
       <DependentUpon>organization.Master</DependentUpon>
+    </Compile>
+    <Compile Include="organization\org_home.Master.cs">
+      <DependentUpon>org_home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="organization\org_home.Master.designer.cs">
+      <DependentUpon>org_home.Master</DependentUpon>
     </Compile>
     <Compile Include="organization\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -174,6 +191,13 @@
     </Compile>
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
