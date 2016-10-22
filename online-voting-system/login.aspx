@@ -4,24 +4,31 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
-        <form class="form-horizontal" method="post">
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Email:</label>
+        <h1>Online Voting System - Single Login</h1>
+        <form class="form-horizontal" method="post" runat="server">
+            
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="logintype">Login Type:</label>
                 <div class="col-sm-6">
-                  <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    <asp:DropDownList ID="logintype" runat="server" CssClass="form-control">
+                        <asp:ListItem>Organization</asp:ListItem>
+                        <asp:ListItem>Candidate</asp:ListItem>
+                        <asp:ListItem>Voter</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
               </div>
+              
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="username">Username:</label>
+                <div class="col-sm-6">
+                  <input type="email" class="form-control" id="username" placeholder="Username">
+                </div>
+              </div>
+
               <div class="form-group">
                 <label class="control-label col-sm-2" for="pwd">Password:</label>
                 <div class="col-sm-6"> 
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-                </div>
-              </div>
-              <div class="form-group"> 
-                <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                    <label><input type="checkbox"> Remember me</label>
-                  </div>
+                  <input type="password" class="form-control" id="pwd" placeholder="Password">
                 </div>
               </div>
               <div class="form-group"> 

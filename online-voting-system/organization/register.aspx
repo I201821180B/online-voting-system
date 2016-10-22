@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/default.Master" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="online_voting_system.register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/organization/organization.Master" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="online_voting_system.organization.register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
-        <h1> Voter Registration </h1>
+        <div class="container-fluid">
+            <h1> Political Party Registration </h1>
         <form class="form-horizontal" method="post" runat="server">
               <div class="form-group">
                 <label class="control-label col-sm-2" for="oname">Organization Name:</label>
@@ -27,6 +27,12 @@
                 <label class="control-label col-sm-2" for="state">State:</label>
                 <div class="col-sm-6">
                   <input type="email" class="form-control" id="state" placeholder="Email">
+                </div>
+              </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="country">Country:</label>
+                <div class="col-sm-6">
+                  <input type="email" class="form-control" id="country" placeholder="Email">
                 </div>
               </div>
               <div class="form-group">

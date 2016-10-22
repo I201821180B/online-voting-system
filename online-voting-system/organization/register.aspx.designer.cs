@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace online_voting_system {
+namespace online_voting_system.organization {
     
     
     public partial class register {
