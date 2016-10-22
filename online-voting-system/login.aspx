@@ -21,21 +21,22 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="username">Username:</label>
                 <div class="col-sm-6">
-                  <input type="email" class="form-control" id="username" placeholder="Username">
+                    <asp:TextBox ID="username" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="control-label col-sm-2" for="pwd">Password:</label>
                 <div class="col-sm-6"> 
-                  <input type="password" class="form-control" id="pwd" placeholder="Password">
+                  <asp:TextBox ID="pwd" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                 </div>
               </div>
               <div class="form-group"> 
                 <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-default">Submit</button>
+                    <asp:Button ID="login_btn" runat="server" Text="Login" CssClass="btn btn-default" OnClick="login_btn_Click"/>
                 </div>
               </div>
+            <asp:Label ID="Label1" runat="server"></asp:Label>
             </form>
     </div>
 </asp:Content>

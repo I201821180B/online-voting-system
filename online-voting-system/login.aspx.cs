@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Web.Configuration;
 
 namespace online_voting_system
 {
@@ -12,6 +9,55 @@ namespace online_voting_system
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void login_btn_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString= WebConfigurationManager.ConnectionStrings["db_conn"].ConnectionString;
+            SqlCommand cmd = new SqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "select login_type from login where Name=@username and Password=@password";
+            cmd.Parameters.AddWithValue("@username", username.Text.ToString());
+            cmd.Parameters.AddWithValue("@password", pwd.Text.ToString());
+            SqlDataReader r = cmd.ExecuteReader();
+            r.Read();
+            String login_type = logintype.SelectedItem.Text.ToString();
+            if(login_type.Equals("Organization"))
+            {
+                if (r["login_type"].ToString() == "Organization")
+                {
+                    Label1.Text = "Organization Login Success";
+                }
+                else
+                {
+                    Label1.Text = "Organization Login Failure";
+                }
+            }
+            else if(login_type.Equals("Candidate"))
+            {
+                if (r["login_type"].ToString() == "Candidate")
+                {
+                    Label1.Text = "Candidate Login Success";
+                }
+                else
+                {
+                    Label1.Text = "Candidate Login Failure";
+                }
+            }
+            else if(login_type.Equals("Voter"))
+            {
+                if (r["login_type"].ToString() == "Voter")
+                {
+                    Label1.Text = "Voter Login Success";
+                }
+                else
+                {
+                    Label1.Text = "Voter Login Failure";
+                }
+            }
+            con.Close();
         }
     }
 }
