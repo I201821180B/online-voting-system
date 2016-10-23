@@ -8,50 +8,44 @@
               <div class="form-group">
                 <label class="control-label col-sm-2" for="oname">Organization Name:</label>
                 <div class="col-sm-6">
-                  <input type="text" class="form-control" id="oname" placeholder="Organization">
+                  <asp:TextBox ID="oname" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
               </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="addr">Address:</label>
                 <div class="col-sm-6">
-                  <textarea class="form-control" rows="5" id="addr" placeholder="Address"></textarea>
+                  <asp:TextBox ID="addr" runat="server" CssClass="form-control" Rows="5"></asp:TextBox>
                 </div>
               </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="city">City:</label>
                 <div class="col-sm-6">
-                  <input type="email" class="form-control" id="city" placeholder="City">
+                  <asp:TextBox ID="city" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
               </div>
                 <div class="form-group">
                 <label class="control-label col-sm-2" for="state">State:</label>
                 <div class="col-sm-6">
-                  <input type="email" class="form-control" id="state" placeholder="Email">
-                </div>
-              </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="country">Country:</label>
-                <div class="col-sm-6">
-                  <input type="email" class="form-control" id="country" placeholder="Email">
+                  <asp:TextBox ID="state" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-2" for="email">Email:</label>
                 <div class="col-sm-6"> 
-                  <input type="text" class="form-control" id="email" placeholder="Email">
+                  <asp:TextBox ID="email" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
                 </div>
               </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="contactno">Contact No.:</label>
                 <div class="col-sm-6"> 
-                  <input type="number" min="1111111111" max="9999999999" step="1" class="form-control" id="contactno"/>
+                  <asp:TextBox ID="contactno" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
                 </div>
               </div>
             
               <div class="form-group">
                 <label class="control-label col-sm-2" for="username">Username:</label>
                 <div class="col-sm-6"> 
-                  <input type="text" class="form-control" id="username" placeholder="Username">
+                  <asp:TextBox ID="username" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
               </div>
             
@@ -74,7 +68,7 @@
 
               <div class="form-group"> 
                 <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-default">Submit</button>
+                    <asp:Button ID="submit_btn" runat="server" Text="Register" CssClass="btn btn-default" OnClick="submit_btn_Click" />
                 </div>
               </div>
             </form>

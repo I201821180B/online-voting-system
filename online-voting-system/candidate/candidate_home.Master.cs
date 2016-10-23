@@ -5,16 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace online_voting_system.organization
+namespace online_voting_system.candidate
 {
-    public partial class register : System.Web.UI.Page
+    public partial class candidate_home : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void submit_btn_Click(object sender, EventArgs e)
         {
 
         }

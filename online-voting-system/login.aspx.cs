@@ -44,7 +44,9 @@ namespace online_voting_system
             {
                 if (r["login_type"].ToString() == "Candidate")
                 {
-                    Label1.Text = "Candidate Login Success";
+                    Session["login"] = "candidate";
+                    Session["username"] = username.Text.ToString();
+                    Response.Redirect("candidate/home.aspx");
                 }
                 else
                 {
