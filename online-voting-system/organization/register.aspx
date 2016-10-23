@@ -23,12 +23,6 @@
                   <asp:TextBox ID="city" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
               </div>
-                <div class="form-group">
-                <label class="control-label col-sm-2" for="state">State:</label>
-                <div class="col-sm-6">
-                  <asp:TextBox ID="state" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-              </div>
               <div class="form-group">
                 <label class="control-label col-sm-2" for="email">Email:</label>
                 <div class="col-sm-6"> 
@@ -38,7 +32,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="contactno">Contact No.:</label>
                 <div class="col-sm-6"> 
-                  <asp:TextBox ID="contactno" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                  <asp:TextBox ID="contactno" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
               </div>
             
