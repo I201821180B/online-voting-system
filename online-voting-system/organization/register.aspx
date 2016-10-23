@@ -29,12 +29,6 @@
                   <asp:TextBox ID="email" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
                 </div>
               </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="contactno">Contact No.:</label>
-                <div class="col-sm-6"> 
-                  <asp:TextBox ID="contactno" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-              </div>
             
               <div class="form-group">
                 <label class="control-label col-sm-2" for="username">Username:</label>

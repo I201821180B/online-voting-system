@@ -23,7 +23,6 @@ namespace online_voting_system.organization
             address = addr.Text.ToString();
             cityname = city.Text.ToString();
             Email = email.Text.ToString();
-            Contactno = contactno.Text.ToString();
             Username = username.Text.ToString();
             Password = password.Text.ToString();
 
@@ -32,12 +31,11 @@ namespace online_voting_system.organization
             SqlCommand cmd = new SqlCommand();
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "INSERT INTO org_table (Name,Address,City,Email,Contact_No,User_Name,Password) VALUES (@organizationname,@address,@cityname,@Email,@Contactno,@Username,@Password)";
+            cmd.CommandText = "INSERT INTO org_table (Name,Address,City,Email,User_Name,Password) VALUES (@organizationname,@address,@cityname,@Email,@Username,@Password)";
             cmd.Parameters.AddWithValue("@organizationname", organizationname);
             cmd.Parameters.AddWithValue("@address", address);
             cmd.Parameters.AddWithValue("@cityname", cityname);
             cmd.Parameters.AddWithValue("@Email", Email);
-            cmd.Parameters.AddWithValue("@Contactno", Contactno);
             cmd.Parameters.AddWithValue("@Username", Username);
             cmd.Parameters.AddWithValue("@Password", Password);
             int num_rows = cmd.ExecuteNonQuery();
