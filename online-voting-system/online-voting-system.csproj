@@ -218,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="admin\" />
+    <Folder Include="candidate\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
