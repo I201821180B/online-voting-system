@@ -5,14 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace online_voting_system
+namespace online_voting_system.voter
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class voter_home : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Abandon();
-            Response.Redirect("login.aspx");
+
         }
     }
 }

@@ -8,8 +8,13 @@
         <form class="form-horizontal" method="post" runat="server">
             
             <div class="form-group">
+                <br/>
+                    <center>
+                        <asp:Label ID="Label1" runat="server" CssClass="alert alert-danger fade in" Visible="False"></asp:Label>
+                    </center>
+                <br/><br/>
                 <label class="control-label col-sm-2" for="logintype">Login Type:</label>
-                <div class="col-sm-6">
+            &nbsp;<div class="col-sm-6">
                     <asp:DropDownList ID="logintype" runat="server" CssClass="form-control">
                         <asp:ListItem>Organization</asp:ListItem>
                         <asp:ListItem>Candidate</asp:ListItem>
@@ -36,7 +41,6 @@
                     <asp:Button ID="login_btn" runat="server" Text="Login" CssClass="btn btn-default" OnClick="login_btn_Click"/>
                 </div>
               </div>
-            <asp:Label ID="Label1" runat="server"></asp:Label>
             </form>
     </div>
 </asp:Content>

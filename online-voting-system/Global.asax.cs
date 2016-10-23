@@ -15,7 +15,7 @@ namespace online_voting_system
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            Session["login"] = "guest";
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace online_voting_system
 
         protected void Session_End(object sender, EventArgs e)
         {
-
+            Session["login"] = "guest";
         }
 
         protected void Application_End(object sender, EventArgs e)

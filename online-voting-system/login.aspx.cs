@@ -8,7 +8,10 @@ namespace online_voting_system
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["login"].ToString() == "organization")
+            {
+                Response.Redirect("organization/home.aspx");
+            }
         }
 
         protected void login_btn_Click(object sender, EventArgs e)
@@ -28,11 +31,13 @@ namespace online_voting_system
             {
                 if (r["login_type"].ToString() == "Organization")
                 {
-                    Label1.Text = "Organization Login Success";
+                    Session["login"] = "organization";
+                    Response.Redirect("organization/home.aspx");
                 }
                 else
                 {
-                    Label1.Text = "Organization Login Failure";
+                    Label1.Text = "Unable To Log In to Organization ! Please, check your credentials.";
+                    Label1.Visible = true;
                 }
             }
             else if(login_type.Equals("Candidate"))
@@ -43,18 +48,22 @@ namespace online_voting_system
                 }
                 else
                 {
-                    Label1.Text = "Candidate Login Failure";
+                    Label1.Text = "Unable To Log In to Candidate ! Please, check your credentials.";
+                    Label1.Visible = true;
                 }
             }
             else if(login_type.Equals("Voter"))
             {
                 if (r["login_type"].ToString() == "Voter")
                 {
-                    Label1.Text = "Voter Login Success";
+                    Session["login"] = "voter";
+                    Session["username"] = username.Text.ToString();
+                    Response.Redirect("voter/home.aspx");
                 }
                 else
                 {
-                    Label1.Text = "Voter Login Failure";
+                    Label1.Text = "Unable To Log In to Candidate ! Please, check your credentials.";
+                    Label1.Visible = true;
                 }
             }
             con.Close();

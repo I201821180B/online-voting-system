@@ -101,6 +101,8 @@
     <Content Include="organization\organization.Master" />
     <Content Include="organization\org_home.Master" />
     <Content Include="logout.aspx" />
+    <Content Include="voter\home.aspx" />
+    <Content Include="voter\voter_home.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,10 +201,23 @@
     <Compile Include="logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="voter\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voter\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="voter\voter_home.Master.cs">
+      <DependentUpon>voter_home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voter\voter_home.Master.designer.cs">
+      <DependentUpon>voter_home.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="admin\" />
-    <Folder Include="voter\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
