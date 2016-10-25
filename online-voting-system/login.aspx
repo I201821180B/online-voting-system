@@ -28,6 +28,7 @@
                 <div class="col-sm-6">
                     <asp:TextBox ID="username" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
+                <asp:RequiredFieldValidator ID="username_required" runat="server" ControlToValidate="username" Text="*" ForeColor="Red" ErrorMessage="Please Enter Username"/>
               </div>
 
               <div class="form-group">
@@ -35,12 +36,18 @@
                 <div class="col-sm-6"> 
                   <asp:TextBox ID="pwd" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                 </div>
+                  <asp:RequiredFieldValidator ID="password_required" runat="server" ControlToValidate="pwd" Text="*" ForeColor="Red" ErrorMessage="Please Enter Password"/>
               </div>
               <div class="form-group"> 
                 <div class="col-sm-offset-2 col-sm-10">
-                    <asp:Button ID="login_btn" runat="server" Text="Login" CssClass="btn btn-default" OnClick="login_btn_Click"/>
+                    <asp:Button ID="login_btn" runat="server" Text="Login" CssClass="btn btn-default" OnClick="login_btn_Click" CausesValidation="true"/>
                 </div>
               </div>
+            <div class="form-group">
+                <div class="col-sm-8">
+                    <asp:ValidationSummary ID="login_err_sum" CssClass="alert alert-danger" runat="server" />
+                </div>
+            </div>
             </form>
     </div>
 </asp:Content>

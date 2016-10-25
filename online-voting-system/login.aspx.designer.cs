@@ -40,6 +40,15 @@ namespace online_voting_system {
         protected global::System.Web.UI.WebControls.TextBox username;
         
         /// <summary>
+        /// username_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator username_required;
+        
+        /// <summary>
         /// pwd control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace online_voting_system {
         protected global::System.Web.UI.WebControls.TextBox pwd;
         
         /// <summary>
+        /// password_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator password_required;
+        
+        /// <summary>
         /// login_btn control.
         /// </summary>
         /// <remarks>
@@ -56,5 +74,14 @@ namespace online_voting_system {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button login_btn;
+        
+        /// <summary>
+        /// login_err_sum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary login_err_sum;
     }
 }

@@ -27,9 +27,9 @@ namespace online_voting_system
             SqlDataReader r = cmd.ExecuteReader();
             r.Read();
             String login_type = logintype.SelectedItem.Text.ToString();
-            if(login_type.Equals("Organization"))
+            if (login_type.Equals("Organization"))
             {
-                if (r["login_type"].ToString() == "Organization")
+                if ((r.HasRows == true) && (r["login_type"].ToString() == "Organization"))
                 {
                     Session["login"] = "organization";
                     Response.Redirect("organization/home.aspx");
@@ -42,7 +42,7 @@ namespace online_voting_system
             }
             else if(login_type.Equals("Candidate"))
             {
-                if (r["login_type"].ToString() == "Candidate")
+                if ((r.HasRows == true) && (r["login_type"].ToString() == "Candidate"))
                 {
                     Session["login"] = "candidate";
                     Session["username"] = username.Text.ToString();
@@ -56,7 +56,7 @@ namespace online_voting_system
             }
             else if(login_type.Equals("Voter"))
             {
-                if (r["login_type"].ToString() == "Voter")
+                if ((r.HasRows == true) && (r["login_type"].ToString() == "Voter"))
                 {
                     Session["login"] = "voter";
                     Session["username"] = username.Text.ToString();
@@ -64,7 +64,7 @@ namespace online_voting_system
                 }
                 else
                 {
-                    Label1.Text = "Unable To Log In to Candidate ! Please, check your credentials.";
+                    Label1.Text = "Unable To Log In to Voter ! Please, check your credentials.";
                     Label1.Visible = true;
                 }
             }
