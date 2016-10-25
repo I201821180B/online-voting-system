@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/default.Master" AutoEventWireup="true" CodeBehind="about.aspx.cs" Inherits="online_voting_system.about" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Online Voting System - About</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">

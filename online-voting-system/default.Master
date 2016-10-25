@@ -4,7 +4,6 @@
 
 <html>
 <head runat="server">
-    <title>Online Voting System</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -41,7 +40,7 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-    <div class="panel panel-default">
+    <div class="panel panel-default" style="margin-top:30px;">
         <div class="panel-footer">&copy; 2016, Online Voting System</div>
     </div>
 </body>
