@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
         <h1>Online Voting System - Single Login</h1>
-        <form class="form-horizontal" method="post" runat="server">
+        <form class="form-horizontal jumbotron" method="post" runat="server">
             
             <div class="form-group">
                 <br/>

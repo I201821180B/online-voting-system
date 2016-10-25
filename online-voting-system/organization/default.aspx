@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/organization/organization.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="online_voting_system.organization._default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Online Voting System - Political Parties/Organizations</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br>

@@ -41,7 +41,7 @@
         
         </asp:ContentPlaceHolder>
     <div class="panel panel-default" style="margin-top:30px;">
-        <div class="panel-footer">&copy; 2016, Online Voting System</div>
+        <div class="panel-footer" style="text-align:center">&copy; 2016, Online Voting System</div>
     </div>
 </body>
 </html>
