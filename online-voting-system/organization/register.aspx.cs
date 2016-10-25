@@ -18,7 +18,7 @@ namespace online_voting_system.organization
 
         protected void submit_btn_Click(object sender, EventArgs e)
         {
-            String organizationname, address,cityname,Email,Contactno,Username,Password;
+            string organizationname, address,cityname,Email,Username,Password;
             organizationname = oname.Text.ToString();
             address = addr.Text.ToString();
             cityname = city.Text.ToString();
@@ -41,7 +41,7 @@ namespace online_voting_system.organization
             int num_rows = cmd.ExecuteNonQuery();
             if (num_rows > 0)
             {
-                cmd.CommandText = "INSERT INTO login (Name,Password,login_type) VALUES (@name,@pass,@login_type)";
+                cmd.CommandText = "INSERT INTO login (Name,Password,login_type,Id) VALUES (@name,@pass,@login_type,(SELECT O_Id from org_table WHERE User_Name = @name))";
                 cmd.Parameters.AddWithValue("@name", Username);
                 cmd.Parameters.AddWithValue("@pass", Password);
                 cmd.Parameters.AddWithValue("@login_type", "Organization");

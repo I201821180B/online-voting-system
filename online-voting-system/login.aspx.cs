@@ -21,7 +21,7 @@ namespace online_voting_system
             SqlCommand cmd = new SqlCommand();
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "select login_type from login where Name=@username and Password=@password";
+            cmd.CommandText = "select login_type from login where Name = @username and Password = @password";
             cmd.Parameters.AddWithValue("@username", username.Text.ToString());
             cmd.Parameters.AddWithValue("@password", pwd.Text.ToString());
             SqlDataReader r = cmd.ExecuteReader();
@@ -29,7 +29,7 @@ namespace online_voting_system
             String login_type = logintype.SelectedItem.Text.ToString();
             if (login_type.Equals("Organization"))
             {
-                if ((r.HasRows == true) && (r["login_type"].ToString() == "Organization"))
+                if ((r.HasRows) && (r["login_type"].ToString() == "Organization"))
                 {
                     Session["login"] = "organization";
                     Response.Redirect("organization/home.aspx");
@@ -42,7 +42,7 @@ namespace online_voting_system
             }
             else if(login_type.Equals("Candidate"))
             {
-                if ((r.HasRows == true) && (r["login_type"].ToString() == "Candidate"))
+                if ((r.HasRows) && (r["login_type"].ToString() == "Candidate"))
                 {
                     Session["login"] = "candidate";
                     Session["username"] = username.Text.ToString();
@@ -56,7 +56,7 @@ namespace online_voting_system
             }
             else if(login_type.Equals("Voter"))
             {
-                if ((r.HasRows == true) && (r["login_type"].ToString() == "Voter"))
+                if ((r.HasRows) && (r["login_type"].ToString() == "Voter"))
                 {
                     Session["login"] = "voter";
                     Session["username"] = username.Text.ToString();

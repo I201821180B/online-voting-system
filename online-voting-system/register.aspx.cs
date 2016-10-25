@@ -31,7 +31,7 @@ namespace online_voting_system
             int num_rows = cmd.ExecuteNonQuery();
             if(num_rows > 0)
             { 
-                cmd.CommandText = "INSERT INTO login (Name,Password,login_type) VALUES (@name,@pass,@login_type)";
+                cmd.CommandText = "INSERT INTO login (Name,Password,login_type,Id) VALUES (@name,@pass,@login_type,(SELECT V_Id from voter_reg WHERE username = @name))";
                 cmd.Parameters.AddWithValue("@name", uname);
                 cmd.Parameters.AddWithValue("@pass", pass);
                 cmd.Parameters.AddWithValue("@login_type", "Voter");
