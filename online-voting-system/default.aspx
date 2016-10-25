@@ -16,15 +16,15 @@
                 <div class="carousel-inner" role="listbox">
 
                   <div class="item active">
-                    <img src="/images/img1.jpg" alt="Vote 1" width="740" height="493">
+                    <center><img src="/images/img1.jpg" alt="Vote 1" width="740" height="493"></center>
                   </div>
 
                   <div class="item">
-                    <img src="/images/img2.jpg" alt="Vote 2" width="740" height="493">
+                    <center><img src="/images/img2.jpg" alt="Vote 2" width="740" height="493"></center>
                   </div>
     
                   <div class="item">
-                    <img src="/images/img3.jpg" alt="Vote 3" width="740" height="493">
+                    <center><img src="/images/img3.jpg" alt="Vote 3" width="740" height="493"></center>
                   </div>
   
                 </div>
