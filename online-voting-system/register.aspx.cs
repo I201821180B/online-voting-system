@@ -8,12 +8,12 @@ namespace online_voting_system
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void reg_button_Click(object sender, EventArgs e)
         {
-            String votername, uname, pass, cityname;
+            String votername, uname, pass, cityname,reg_msg=null;
             votername = vname.Text.ToString();
             uname = username.Text.ToString();
             pass = password.Text.ToString();
@@ -39,7 +39,14 @@ namespace online_voting_system
                 if(final_insert > 0)
                 {
                     //insertion successful...
-                    Response.Redirect("login.aspx");
+                    reg_msg = "Voter is Registered Successfully !";
+                    Response.Redirect("login.aspx?msg="+reg_msg);
+                }
+                else
+                {
+                    //insertion failure...
+                    reg_msg = "Voter is Not Registered !";
+                    Response.Redirect("login.aspx?msg=" + reg_msg);
                 }
             }
             con.Close();

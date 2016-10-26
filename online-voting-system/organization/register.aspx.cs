@@ -18,7 +18,7 @@ namespace online_voting_system.organization
 
         protected void submit_btn_Click(object sender, EventArgs e)
         {
-            string organizationname, address,cityname,Email,Username,Password;
+            string organizationname, address,cityname,Email,Username,Password,reg_msg=null;
             organizationname = oname.Text.ToString();
             address = addr.Text.ToString();
             cityname = city.Text.ToString();
@@ -49,7 +49,14 @@ namespace online_voting_system.organization
                 if (final_insert > 0)
                 {
                     //insertion successful...
-                    Response.Redirect("../login.aspx");
+                    reg_msg = "Organization is Registered Successfully !";
+                    Response.Redirect("../login.aspx?msg="+reg_msg);
+                }
+                else
+                {
+                    //insertion failure...
+                    reg_msg = "Organization is Not Registered !";
+                    Response.Redirect("../login.aspx?msg=" + reg_msg);
                 }
             }
             con.Close();

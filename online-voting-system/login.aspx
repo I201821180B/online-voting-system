@@ -3,16 +3,17 @@
     <title>Online Voting System - Login</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
+    <div class="container-fluid" style="align-items:center;">
         <h1>Online Voting System - Single Login</h1>
-        <form class="form-horizontal jumbotron" method="post" runat="server">
+        <form class="form-horizontal jumbotron col-sm-8" method="post" runat="server">
             
             <div class="form-group">
-                <br/>
-                    <center>
-                        <asp:Label ID="Label1" runat="server" CssClass="alert alert-danger fade in" Visible="False"></asp:Label>
-                    </center>
-                <br/><br/>
+                <div class="control-label" style="text-align:center; margin-bottom:20px;">
+                         <asp:Label ID="Label1" runat="server" CssClass="alert alert-danger fade in" Visible="False"></asp:Label>
+                </div>
+                <div class="control-label" style="text-align:center; margin-bottom:20px;">
+                    <asp:Label ID="message_lbl" runat="server" CssClass="alert alert-info" Visible="false"></asp:Label>
+                </div>
                 <label class="control-label col-sm-2" for="logintype">Login Type:</label>
             &nbsp;<div class="col-sm-6">
                     <asp:DropDownList ID="logintype" runat="server" CssClass="form-control">

@@ -12,6 +12,11 @@ namespace online_voting_system
             {
                 Response.Redirect("organization/home.aspx");
             }
+            if (Request.QueryString["msg"] != null)
+            {
+                message_lbl.Text = Request.QueryString["msg"].ToString();
+                message_lbl.Visible = true;
+            }
         }
 
         protected void login_btn_Click(object sender, EventArgs e)

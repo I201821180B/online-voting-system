@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace online_voting_system
 {
@@ -11,8 +6,9 @@ namespace online_voting_system
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String logout_msg = "You Have Logged Out !";
             Session.Abandon();
-            Response.Redirect("login.aspx");
+            Response.Redirect("login.aspx?msg="+logout_msg);
         }
     }
 }

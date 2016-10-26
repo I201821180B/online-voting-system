@@ -31,6 +31,24 @@ namespace online_voting_system {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator vname_required;
         
         /// <summary>
+        /// dob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dob;
+        
+        /// <summary>
+        /// dob_req control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator dob_req;
+        
+        /// <summary>
         /// city control.
         /// </summary>
         /// <remarks>
