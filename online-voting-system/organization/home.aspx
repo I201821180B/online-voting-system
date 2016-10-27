@@ -9,7 +9,7 @@
         <asp:Menu ID="Menu1" runat="server">
             <Items>
                 <asp:MenuItem Text="Home" NavigateUrl="~/organization/home.aspx" />
-                <asp:MenuItem Text="Candidate Registration" NavigateUrl="#" />
+                <asp:MenuItem Text="Candidate Registration" NavigateUrl="~/organization/can_reg.aspx"/>
                 <asp:MenuItem Text="Results" NavigateUrl="#" />
             </Items>
         </asp:Menu>

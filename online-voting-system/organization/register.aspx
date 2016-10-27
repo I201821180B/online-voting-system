@@ -9,21 +9,21 @@
               <div class="form-group">
                 <label class="control-label col-sm-2" for="oname">Organization Name:</label>
                 <div class="col-sm-6">
-                  <asp:TextBox ID="oname" runat="server" CssClass="form-control"></asp:TextBox>
+                  <asp:TextBox ID="oname" runat="server" CssClass="form-control text-capitalize"></asp:TextBox>
                 </div>
                     <asp:RequiredFieldValidator ID="oname_req" runat="server" ControlToValidate="oname" Text="*" ForeColor="Red" ErrorMessage="Please Enter the Organization Name" />
               </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="addr">Address:</label>
                 <div class="col-sm-6">
-                  <asp:TextBox ID="addr" runat="server" CssClass="form-control" Rows="5"></asp:TextBox>
+                  <asp:TextBox ID="addr" runat="server" CssClass="form-control text-capitalize" Rows="5"></asp:TextBox>
                 </div>
                 <asp:RequiredFieldValidator ID="addr_req" runat="server" ControlToValidate="addr" Text="*" ForeColor="Red" ErrorMessage="Please Enter the Organization Address" />
               </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="city">City:</label>
                 <div class="col-sm-6">
-                  <asp:TextBox ID="city" runat="server" CssClass="form-control"></asp:TextBox>
+                  <asp:TextBox ID="city" runat="server" CssClass="form-control text-capitalize"></asp:TextBox>
                 </div>
                 <asp:RequiredFieldValidator ID="city_req" runat="server" ControlToValidate="city" Text="*" ForeColor="Red" ErrorMessage="Please Enter the Organization City" />
               </div>
@@ -64,7 +64,7 @@
 
               <div class="form-group"> 
                 <div class="col-sm-offset-2 col-sm-10">
-                    <asp:Button ID="submit_btn" runat="server" Text="Register" CssClass="btn btn-default" OnClick="submit_btn_Click" CausesValidation="true" />
+                    <asp:Button ID="submit_btn" runat="server" Text="Register" CssClass="btn btn-primary" OnClick="submit_btn_Click" CausesValidation="true" />
                 </div>
               </div>
             <div class="form-group">

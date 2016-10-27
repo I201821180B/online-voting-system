@@ -41,7 +41,7 @@
               </div>
               <div class="form-group"> 
                 <div class="col-sm-offset-2 col-sm-10">
-                    <asp:Button ID="login_btn" runat="server" Text="Login" CssClass="btn btn-default" OnClick="login_btn_Click" CausesValidation="true"/>
+                    <asp:Button ID="login_btn" runat="server" Text="Login" CssClass="btn btn-primary" OnClick="login_btn_Click" CausesValidation="true"/>
                 </div>
               </div>
             <div class="form-group">

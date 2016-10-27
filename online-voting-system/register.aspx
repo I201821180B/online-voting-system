@@ -54,7 +54,7 @@
 
               <div class="form-group"> 
                 <div class="col-sm-offset-2 col-sm-10">
-                    <asp:Button ID="reg_button" runat="server" Text="Register" CssClass="btn btn-default" OnClick="reg_button_Click" CausesValidation="true"/>
+                    <asp:Button ID="reg_button" runat="server" Text="Register" CssClass="btn btn-primary" OnClick="reg_button_Click" CausesValidation="true"/>
                     <asp:Label ID="reg_msg" runat="server" Visible="false"></asp:Label>
                 </div>
               </div>
