@@ -10,33 +10,24 @@
 namespace online_voting_system.voter {
     
     
-    public partial class home {
+    public partial class update_picture {
         
         /// <summary>
-        /// user_name control.
+        /// img_upload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label user_name;
+        protected global::System.Web.UI.WebControls.FileUpload img_upload;
         
         /// <summary>
-        /// FormView1 control.
+        /// upload_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
-        
-        /// <summary>
-        /// ProfileDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProfileDataSource;
+        protected global::System.Web.UI.WebControls.Button upload_btn;
     }
 }

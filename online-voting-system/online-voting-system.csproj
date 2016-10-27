@@ -107,7 +107,10 @@
     <Content Include="organization\organization.Master" />
     <Content Include="organization\org_home.Master" />
     <Content Include="logout.aspx" />
+    <Content Include="scripts\jquery-3.1.0.min.js" />
     <Content Include="voter\home.aspx" />
+    <Content Include="voter\update_picture.aspx" />
+    <Content Include="voter\update_profile.aspx" />
     <Content Include="voter\voter_home.Master" />
     <Content Include="candidate\candidate_home.Master" />
     <None Include="Web.Debug.config">
@@ -234,6 +237,20 @@
     <Compile Include="voter\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="voter\update_picture.aspx.cs">
+      <DependentUpon>update_picture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voter\update_picture.aspx.designer.cs">
+      <DependentUpon>update_picture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="voter\update_profile.aspx.cs">
+      <DependentUpon>update_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voter\update_profile.aspx.designer.cs">
+      <DependentUpon>update_profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="voter\voter_home.Master.cs">
       <DependentUpon>voter_home.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +262,7 @@
   <ItemGroup>
     <Folder Include="admin\" />
     <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="voter\profile-images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

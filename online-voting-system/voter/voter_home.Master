@@ -26,6 +26,11 @@
                   <a class="navbar-brand" href="home.aspx">Voter Home</a>
                 </div>
                   <div class="collapse navbar-collapse" id="myNavbar">
+                      <ul class="nav navbar-nav">
+                          <li><a href="update_profile.aspx">Update Profile</a></li>
+                          <li><a href="#">Current Elections</a></li>
+                          <li><a href="#">Election Results</a></li>
+                      </ul>
                       <ul class="nav navbar-nav navbar-right">
                           <li><a href="../logout.aspx"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
                       </ul>

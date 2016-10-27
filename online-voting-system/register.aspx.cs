@@ -22,7 +22,7 @@ namespace online_voting_system
             int years = age.Year - 1;
             if(years > 18)
             {
-                String votername, uname, pass, cityname,reg_msg=null;
+                String votername, uname, pass, cityname,reg_msg=null,def_pro_pic="profile-images/userimage.png";
                 votername = vname.Text.ToString();
                 uname = username.Text.ToString();
                 pass = password.Text.ToString();
@@ -32,11 +32,12 @@ namespace online_voting_system
                 SqlCommand cmd = new SqlCommand();
                 con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "INSERT INTO voter_reg (name,city,username,password) VALUES (@votername,@city,@username,@password)";
+                cmd.CommandText = "INSERT INTO voter_reg (name,city,username,password,image_url) VALUES (@votername,@city,@username,@password,@image_url)";
                 cmd.Parameters.AddWithValue("@votername", votername);
                 cmd.Parameters.AddWithValue("@username", uname);
                 cmd.Parameters.AddWithValue("@password", pass);
                 cmd.Parameters.AddWithValue("@city", cityname);
+                cmd.Parameters.AddWithValue("@image_url",def_pro_pic);
                 int num_rows = cmd.ExecuteNonQuery();
                 if(num_rows > 0)
                 { 

@@ -12,6 +12,14 @@ namespace online_voting_system
             {
                 Response.Redirect("organization/home.aspx");
             }
+            else if (Session["login"].ToString() == "candidate")
+            {
+                Response.Redirect("candidate/home.aspx");
+            }
+            else if (Session["login"].ToString() == "voter")
+            {
+                Response.Redirect("voter/home.aspx");
+            }
             if (Request.QueryString["msg"] != null)
             {
                 message_lbl.Text = Request.QueryString["msg"].ToString();

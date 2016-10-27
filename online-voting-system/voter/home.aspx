@@ -6,6 +6,33 @@
     <div class="container-fluid">
         <form runat="server">
             <h1>Welcome, <asp:Label ID="user_name" runat="server"></asp:Label></h1>
+            <div>
+                <span>
+                    <asp:FormView ID="FormView1" runat="server" CssClass="table table-bordered" DataSourceID="ProfileDataSource">
+                    <ItemTemplate>
+                        <table class="table table-hover table-striped table-bordered">
+                            <tr>
+                                <td>Voter Name : </td>
+                                <td><asp:Label ID="nameLabel" runat="server" Text='<%# Bind("name") %>' /></td>
+                            </tr>
+                            <tr>
+                                <td>Voter City : </td>
+                                <td><asp:Label ID="cityLabel" runat="server" Text='<%# Bind("city") %>' /></td>
+                            </tr>
+                            <tr>
+                                <td>Username : </td>
+                                <td><asp:Label ID="usernameLabel" runat="server" Text='<%# Bind("username") %>' /></td>
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+                </asp:FormView>
+                </span>
+            </div>
+            <asp:SqlDataSource ID="ProfileDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [name], [city], [username] FROM [voter_reg] WHERE ([username] = @username)">
+                <SelectParameters>
+                    <asp:SessionParameter DefaultValue="" Name="username" SessionField="username" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
         </form>
     </div>
 </asp:Content>

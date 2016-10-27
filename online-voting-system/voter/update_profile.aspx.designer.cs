@@ -10,16 +10,7 @@
 namespace online_voting_system.voter {
     
     
-    public partial class home {
-        
-        /// <summary>
-        /// user_name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label user_name;
+    public partial class update_profile {
         
         /// <summary>
         /// FormView1 control.
@@ -31,12 +22,12 @@ namespace online_voting_system.voter {
         protected global::System.Web.UI.WebControls.FormView FormView1;
         
         /// <summary>
-        /// ProfileDataSource control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProfileDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }
