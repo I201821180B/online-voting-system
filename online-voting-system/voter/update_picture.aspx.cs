@@ -35,9 +35,12 @@ namespace online_voting_system.voter
                     case ".bmp":
                     case ".jpg":
                     case ".gif":
+                    case ".png":
                         break;
                     default:
                         // this type of file is not allowed...
+                        msg_lbl.Visible = true;
+                        msg_lbl.Text = "This type of file is not allowed !";
                         return;
                 }
                 String serverfileName = Session["username"] + Path.GetExtension(img_upload.PostedFile.FileName);
@@ -55,10 +58,18 @@ namespace online_voting_system.voter
                     int num_rows = cmd.ExecuteNonQuery();
                     if(num_rows > 0)
                     {
-                        // image added successfully
+                    // image added successfully
+                    msg_lbl.Visible = false;
+                    msg_lbl.Text = null;
+                    Response.Redirect("update_profile.aspx");
                     }
                     con.Close();
             }
+        }
+
+        protected void cancel_btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("update_profile.aspx");
         }
     }
 }

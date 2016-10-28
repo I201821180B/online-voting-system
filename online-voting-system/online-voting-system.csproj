@@ -108,6 +108,8 @@
     <Content Include="organization\org_home.Master" />
     <Content Include="logout.aspx" />
     <Content Include="scripts\jquery-3.1.0.min.js" />
+    <Content Include="voter\change_password.aspx" />
+    <Content Include="voter\current_elections.aspx" />
     <Content Include="voter\home.aspx" />
     <Content Include="voter\update_picture.aspx" />
     <Content Include="voter\update_profile.aspx" />
@@ -229,6 +231,20 @@
     </Compile>
     <Compile Include="logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="voter\change_password.aspx.cs">
+      <DependentUpon>change_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voter\change_password.aspx.designer.cs">
+      <DependentUpon>change_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="voter\current_elections.aspx.cs">
+      <DependentUpon>current_elections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voter\current_elections.aspx.designer.cs">
+      <DependentUpon>current_elections.aspx</DependentUpon>
     </Compile>
     <Compile Include="voter\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>

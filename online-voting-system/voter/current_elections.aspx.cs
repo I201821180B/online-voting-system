@@ -2,7 +2,7 @@
 
 namespace online_voting_system.voter
 {
-    public partial class update_profile : System.Web.UI.Page
+    public partial class current_elections : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -11,11 +11,6 @@ namespace online_voting_system.voter
                 Session.Abandon();
                 Response.Redirect("../login.aspx");
             }
-        }
-
-        protected void change_image_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("update_picture.aspx");
         }
     }
 }
