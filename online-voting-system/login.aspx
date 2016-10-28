@@ -12,7 +12,7 @@
                     <asp:Label ID="Label1" runat="server" CssClass="alert alert-danger fade in" Visible="False"></asp:Label>
                 </div>
                 <div class="control-label" style="text-align:center; margin-bottom:20px;">
-                    <asp:Label ID="message_lbl" runat="server" CssClass="alert alert-info" Visible="false"></asp:Label>
+                    <asp:Label ID="message_lbl" runat="server" CssClass="alert alert-info fade in" Visible="false"></asp:Label>
                 </div>
                 <label class="control-label col-sm-2" for="logintype">Login Type:</label>
             &nbsp;<div class="col-sm-6">
