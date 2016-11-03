@@ -45,7 +45,7 @@
                         </tr>
                         <tr>
                             <td>Profile Photo :</td>
-                            <td><asp:Image ID="image_urlLabel" BackColor="Blue" runat="server" Height="200" Width="200" ImageUrl ='<%# Bind("image_url") %>'/></td>
+                            <td><asp:Image ID="imageLabel" BackColor="Blue" runat="server" Height="200" Width="200" ImageUrl ='<%# "showImage.ashx?id="+ Eval("V_Id")  %>'/></td>
                         </tr>
                         <tr>
                             <td>
@@ -60,7 +60,7 @@
                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#EFF3FB" />
             </asp:FormView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [city], [username], [image_url] FROM [voter_reg] WHERE ([username] = @username)" UpdateCommand="UPDATE voter_reg SET city = @city, username = @username WHERE (username = @username)">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [V_Id], [city], [username], [image] FROM [voter_reg] WHERE ([username] = @username)" UpdateCommand="UPDATE voter_reg SET city = @city, username = @username WHERE (username = @username)">
                 <SelectParameters>
                     <asp:SessionParameter Name="username" SessionField="username" Type="String" />
                 </SelectParameters>

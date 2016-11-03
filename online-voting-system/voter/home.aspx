@@ -24,15 +24,15 @@
                                 <td><asp:Label ID="usernameLabel" runat="server" Text='<%# Bind("username") %>' /></td>
                             </tr>
                             <tr>
-                                <td>Profile Picture : </td>
-                                <td><asp:Image ID="image_urlLabel" BackColor="Blue" runat="server" Height="200" Width="200" ImageUrl ='<%# Bind("image_url") %>'/></td>
+                                <td> Profile Picture : </td>
+                                <td><asp:Image ID="V_IdLabel" runat="server" ImageUrl='<%# "showImage.ashx?id="+ Eval("V_Id")  %>' Height="200" Width="200" BackColor="Blue"/></td>
                             </tr>
                         </table>
                     </ItemTemplate>
                 </asp:FormView>
                 </span>
             </div>
-            <asp:SqlDataSource ID="ProfileDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [name], [city], [username],[image_url] FROM [voter_reg] WHERE ([username] = @username)">
+            <asp:SqlDataSource ID="ProfileDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [V_Id], [name], [city], [username] FROM [voter_reg] WHERE ([username] = @username)">
                 <SelectParameters>
                     <asp:SessionParameter DefaultValue="" Name="username" SessionField="username" Type="String" />
                 </SelectParameters>

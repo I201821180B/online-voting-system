@@ -29,6 +29,8 @@ namespace online_voting_system.voter
             }
             else
             {
+
+
                 String extension = Path.GetExtension(img_upload.PostedFile.FileName);
                 switch (extension.ToLower())
                 {
@@ -44,17 +46,27 @@ namespace online_voting_system.voter
                         return;
                 }
                 String serverfileName = Session["username"] + Path.GetExtension(img_upload.PostedFile.FileName);
+
+                /*
                 string fullUploadPath = Path.Combine(uploadDir, serverfileName);
                     img_upload.PostedFile.SaveAs(fullUploadPath);
                 String fileName = "profile-images/" + serverfileName;
+                */
+
+                int length = img_upload.PostedFile.ContentLength;
+                byte[] pic = new byte[length];
+
+                img_upload.PostedFile.InputStream.Read(pic, 0, length);
+
                     SqlConnection con = new SqlConnection();
                     con.ConnectionString = WebConfigurationManager.ConnectionStrings["db_conn"].ConnectionString;
                     SqlCommand cmd = new SqlCommand();
                     con.Open();
                     cmd.Connection = con;
-                    cmd.CommandText = "UPDATE voter_reg SET image_url = @image_url WHERE username=@username";
+                    cmd.CommandText = "UPDATE voter_reg SET image = @image WHERE username=@username";
                     cmd.Parameters.AddWithValue("@username", Session["username"]);
-                    cmd.Parameters.AddWithValue("@image_url", fileName);
+                    cmd.Parameters.AddWithValue("@image", pic);
+                    //cmd.Parameters.AddWithValue("@image_url", fileName);
                     int num_rows = cmd.ExecuteNonQuery();
                     if(num_rows > 0)
                     {

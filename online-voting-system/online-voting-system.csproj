@@ -117,6 +117,7 @@
     <Content Include="voter\voter_home.Master" />
     <Content Include="candidate\candidate_home.Master" />
     <Content Include="admin\admin.Master" />
+    <Content Include="voter\showImage.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -268,6 +269,9 @@
     </Compile>
     <Compile Include="voter\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="voter\showImage.ashx.cs">
+      <DependentUpon>showImage.ashx</DependentUpon>
     </Compile>
     <Compile Include="voter\update_picture.aspx.cs">
       <DependentUpon>update_picture.aspx</DependentUpon>
