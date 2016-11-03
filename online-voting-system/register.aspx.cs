@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Web.Configuration;
 
 namespace online_voting_system
@@ -22,7 +24,15 @@ namespace online_voting_system
             int years = age.Year - 1;
             if(years > 18)
             {
-                String votername, uname, pass, cityname,reg_msg=null,def_pro_pic="profile-images/userimage.png";
+                String votername, uname, pass, cityname,reg_msg=null,def_pro_pic=null;
+
+                def_pro_pic = Server.MapPath("./voter/profile-images/userimage.png");
+                MemoryStream stream = new MemoryStream();
+                Bitmap bmp = new Bitmap(def_pro_pic);
+                bmp.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                byte[] image = stream.ToArray();
+                
                 votername = vname.Text.ToString();
                 uname = username.Text.ToString();
                 pass = password.Text.ToString();
@@ -32,16 +42,16 @@ namespace online_voting_system
                 SqlCommand cmd = new SqlCommand();
                 con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "INSERT INTO voter_reg (name,city,username,password,image_url) VALUES (@votername,@city,@username,@password,@image_url)";
+                cmd.CommandText = "INSERT INTO voter_reg (name,city,username,password,image) VALUES (@votername,@city,@username,@password,@image)";
                 cmd.Parameters.AddWithValue("@votername", votername);
                 cmd.Parameters.AddWithValue("@username", uname);
                 cmd.Parameters.AddWithValue("@password", pass);
                 cmd.Parameters.AddWithValue("@city", cityname);
-                cmd.Parameters.AddWithValue("@image_url",def_pro_pic);
+                cmd.Parameters.AddWithValue("@image",image);
                 int num_rows = cmd.ExecuteNonQuery();
                 if(num_rows > 0)
                 { 
-                    cmd.CommandText = "INSERT INTO login (Name,Password,login_type,Id) VALUES (@name,@pass,@login_type,(SELECT V_Id from voter_reg WHERE username = @name))";
+                    cmd.CommandText = "INSERT INTO login (Name,Password,login_type) VALUES (@name,@pass,@login_type)";
                     cmd.Parameters.AddWithValue("@name", uname);
                     cmd.Parameters.AddWithValue("@pass", pass);
                     cmd.Parameters.AddWithValue("@login_type", "Voter");

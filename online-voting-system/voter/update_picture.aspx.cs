@@ -15,10 +15,6 @@ namespace online_voting_system.voter
                 Session.Abandon();
                 Response.Redirect("../login.aspx");
             }
-            else
-            {
-                uploadDir = Path.Combine(Request.PhysicalApplicationPath, "voter\\profile-images");
-            }
         }
 
         protected void upload_btn_Click(object sender, EventArgs e)
@@ -46,12 +42,6 @@ namespace online_voting_system.voter
                         return;
                 }
                 String serverfileName = Session["username"] + Path.GetExtension(img_upload.PostedFile.FileName);
-
-                /*
-                string fullUploadPath = Path.Combine(uploadDir, serverfileName);
-                    img_upload.PostedFile.SaveAs(fullUploadPath);
-                String fileName = "profile-images/" + serverfileName;
-                */
 
                 int length = img_upload.PostedFile.ContentLength;
                 byte[] pic = new byte[length];
