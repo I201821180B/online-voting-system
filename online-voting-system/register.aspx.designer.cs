@@ -13,6 +13,15 @@ namespace online_voting_system {
     public partial class register {
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// vname control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace online_voting_system {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator city_required;
         
         /// <summary>
+        /// username_update_panel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel username_update_panel;
+        
+        /// <summary>
         /// username control.
         /// </summary>
         /// <remarks>
@@ -74,6 +92,15 @@ namespace online_voting_system {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox username;
+        
+        /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
         
         /// <summary>
         /// username_required control.
@@ -155,5 +182,14 @@ namespace online_voting_system {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary reg_summary;
+        
+        /// <summary>
+        /// hidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidden;
     }
 }
