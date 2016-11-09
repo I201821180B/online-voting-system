@@ -45,6 +45,7 @@ namespace online_voting_system
                 if ((r.HasRows) && (r["login_type"].ToString() == "Organization"))
                 {
                     Session["login"] = "organization";
+                    Session["username"] = username.Text.ToString();
                     Response.Redirect("organization/home.aspx");
                 }
                 else
