@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
         <form runat="server">
-            <h1>Welcome, <asp:Label ID="user_name" runat="server"></asp:Label></h1>
+            <h1 class="jumbotron" style="text-align:center;">Welcome, <asp:Label ID="user_name" runat="server"></asp:Label></h1>
             <div>
                 <span>
                     <asp:FormView ID="FormView1" runat="server" CssClass="table table-bordered" DataSourceID="ProfileDataSource">
