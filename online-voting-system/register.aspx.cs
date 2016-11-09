@@ -64,25 +64,17 @@ namespace online_voting_system
                     cmd.Parameters.AddWithValue("@image",image);
                     int num_rows = cmd.ExecuteNonQuery();
                     if(num_rows > 0)
-                    { 
-                        cmd.CommandText = "INSERT INTO login (Name,Password,login_type) VALUES (@name,@pass,@login_type)";
-                        cmd.Parameters.AddWithValue("@name", uname);
-                        cmd.Parameters.AddWithValue("@pass", pass);
-                        cmd.Parameters.AddWithValue("@login_type", "Voter");
-                        int final_insert = cmd.ExecuteNonQuery();
-                        if(final_insert > 0)
                         {
                             //insertion successful...
                             reg_msg = "Voter is Registered Successfully !";
-                            Response.Redirect("login.aspx?msg="+reg_msg);
+                            Response.Redirect("login.aspx?msg=" + Server.UrlEncode(reg_msg));
                         }
                         else
                         {
                             //insertion failure...
                             reg_msg = "Voter is Not Registered !";
-                            Response.Redirect("login.aspx?msg=" + reg_msg);
+                            Response.Redirect("login.aspx?msg=" + Server.UrlEncode(reg_msg));
                         }
-                    }
                     con.Close();
                 }
                 else
