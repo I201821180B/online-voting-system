@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.Configuration;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace online_voting_system.organization
 {
@@ -41,24 +36,16 @@ namespace online_voting_system.organization
             int num_rows = cmd.ExecuteNonQuery();
             if (num_rows > 0)
             {
-                cmd.CommandText = "INSERT INTO login (Name,Password,login_type,Id) VALUES (@name,@pass,@login_type,(SELECT O_Id from org_table WHERE User_Name = @name))";
-                cmd.Parameters.AddWithValue("@name", Username);
-                cmd.Parameters.AddWithValue("@pass", Password);
-                cmd.Parameters.AddWithValue("@login_type", "Organization");
-                int final_insert = cmd.ExecuteNonQuery();
-                if (final_insert > 0)
-                {
                     //insertion successful...
                     reg_msg = "Organization is Registered Successfully !";
-                    Response.Redirect("../login.aspx?msg="+reg_msg);
-                }
+                    Response.Redirect("../login.aspx?msg=" + Server.UrlEncode(reg_msg));
+            }
                 else
                 {
                     //insertion failure...
                     reg_msg = "Organization is Not Registered !";
-                    Response.Redirect("../login.aspx?msg=" + reg_msg);
+                    Response.Redirect("../login.aspx?msg=" + Server.UrlEncode(reg_msg));
                 }
-            }
             con.Close();
         }
     }
