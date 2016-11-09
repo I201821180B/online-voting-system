@@ -16,41 +16,87 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="cadd">Candidate Address:</label>
                 <div class="col-sm-6">
-                  <asp:TextBox ID="cadd" runat="server" CssClass="form-control"></asp:TextBox>
+                  <asp:TextBox ID="cadd" TextMode="MultiLine" Rows="6" Height="150" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="cadd" Text="*" ForeColor="Red" ErrorMessage="Please Enter Address"/>
               </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="cphone">Candidate Phone No:</label>
+                <label class="control-label col-sm-2" for="cphoto">Candidate Photo:</label>
                 <div class="col-sm-6">
-                  <asp:TextBox ID="cphone" runat="server" CssClass="form-control" TextMode="Phone"></asp:TextBox>
+                  <asp:FileUpload ID="cphoto" runat="server" CssClass="form-control" />
                 </div>
-                  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="cphone" Text="*" ForeColor="Red" ErrorMessage="Please Enter Phone No."/>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="cphoto" Text="*" ForeColor="Red" ErrorMessage="Please Provide a Photo"/>
+            </div>
+            <asp:UpdatePanel ID="username_update_panel" runat="server">
+                <ContentTemplate>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="username">Username:</label>
+                            <div class="col-sm-6"> 
+                              <asp:TextBox ID="username" runat="server" CssClass="form-control" OnChange ="CheckUserName(this)"></asp:TextBox>
+                            </div>
+                        <asp:Label ID="lblStatus" runat="server" EnableViewState="true"></asp:Label>
+                        <asp:RequiredFieldValidator ID="username_required" runat="server" ControlToValidate="username" Text="*" ForeColor="Red" ErrorMessage="Please Enter Username"/>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="password">Password:</label>
+                <div class="col-sm-6"> 
+                  <asp:TextBox ID="password" runat="server" CssClass="form-control" CausesValidation="True" TextMode="Password"></asp:TextBox>
+                </div>
+                  <asp:RequiredFieldValidator ID="password_required" runat="server" ControlToValidate="password" Text="*" ForeColor="Red" ErrorMessage="Please Enter Password"/>
               </div>
+            
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="cnfpassword">Confirm Password:</label>
+                <div class="col-sm-6"> 
+                  <asp:TextBox ID="cnfpassword" runat="server" CssClass="form-control" CausesValidation="True" TextMode="Password"></asp:TextBox>
+                </div>
+                  <asp:RequiredFieldValidator ID="cnfpass_required" runat="server" ControlToValidate="cnfpassword" Text="*" ForeColor="Red" ErrorMessage="Please Confirm The Password"/>
+                  <asp:CompareValidator ID="passvalidate" runat="server" ControlToValidate="cnfpassword" ControlToCompare="password" ErrorMessage="Passwords Do Not Match !" CssClass="alert alert-danger"/>
+              </div>
+
+              <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <asp:Button ID="reg_button" runat="server" Text="Register" CssClass="btn btn-primary" OnClick="reg_button_Click" CausesValidation="true"/>
+                    <asp:Label ID="reg_msg" runat="server" Visible="false"></asp:Label>
+                </div>
+              </div>
+
             <div class="form-group">
-                <asp:Image ID="ImgUpload" runat="server" Height="200px" Width="200px" />
-                <div class="col-sm-6">
-                  <input ID="FileUpload" type="file" class="form-control" name="file" onchange="previewFile()"  runat="server" />
+                <div class="col-sm-8">
+                    <asp:ValidationSummary ID="reg_summary" runat="server" CssClass="alert alert-danger" />
                 </div>
             </div>
-            
+            <asp:HiddenField ID="hidden" runat="server" />
         </form>
     </div>
-    <script type="text/javascript">
-       function previewFile() {  
-       var ImagePreview = document.querySelector('#<%=ImgUpload.ClientID %>');  
-       var ImageFile = document.querySelector('#<%=FileUpload.ClientID %>').files[0];  
-       var reader = new FileReader();  
+    <script type="text/javascript">  
   
-       reader.onloadend = function () {  
-           ImagePreview.src = reader.result;  
-       }  
-  
-       if (ImageFile) {  
-           reader.readAsDataURL(ImageFile);  
-       } else {  
-           ImagePreview.src = "";  
-       }  
-   }  
+        function CheckUserName(oName) 
+        {
+            PageMethods.UserNameChecker(oName.value, OnSucceeded); 
+        }
+
+        function OnSucceeded(result, userContext, methodName) 
+        {   
+            lbl = document.getElementById('<%=lblStatus.ClientID %>'); 
+
+            if (methodName == "UserNameChecker") 
+            { 
+                if (result == true) 
+                { 
+                    lbl.textContent = 'username not available'; 
+                    lbl.style.color = "red"; 
+                } 
+                else 
+                { 
+                    lbl.textContent = 'username available';
+                    lbl.style.color = "green"; 
+                }
+                document.getElementById('<%=hidden.ClientID %>').value = lbl.innerHTML;
+            } 
+        }  
     </script>
 </asp:Content>
