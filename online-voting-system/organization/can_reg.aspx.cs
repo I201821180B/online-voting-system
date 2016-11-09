@@ -19,17 +19,24 @@ namespace online_voting_system.organization
         [System.Web.Services.WebMethod]
         public static bool UserNameChecker(string newUserName)
         {
-            SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["db_conn"].ConnectionString);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select User_Name from Candidate_Reg where User_Name=@username", con);
-            cmd.Parameters.AddWithValue("@username", newUserName);
+            if(newUserName != null)
+            {
+                SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["db_conn"].ConnectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select Name from login where Name=@username", con);
+                cmd.Parameters.AddWithValue("@username", newUserName);
 
-            object found = cmd.ExecuteScalar();
+                object found = cmd.ExecuteScalar();
 
-            if (found != null)
-                return true;
+                if (found != null)
+                    return true;
+                else
+                    return false;
+            }
             else
-                return false;
+            {
+                return true;
+            }
         }
 
         protected void reg_button_Click(object sender, EventArgs e)
