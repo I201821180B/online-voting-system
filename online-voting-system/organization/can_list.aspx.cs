@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace online_voting_system.organization
 {
@@ -11,7 +6,11 @@ namespace online_voting_system.organization
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["login"].ToString() != "organization")
+            {
+                Session.Abandon();
+                Response.Redirect("../login.aspx");
+            }
         }
     }
 }
