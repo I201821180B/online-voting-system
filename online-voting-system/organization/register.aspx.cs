@@ -48,5 +48,29 @@ namespace online_voting_system.organization
                 }
             con.Close();
         }
+
+        [System.Web.Services.WebMethod]
+        public static bool UserNameChecker(string newUserName)
+        {
+            if (newUserName != "")
+            {
+                SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["db_conn"].ConnectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select Name from login where Name=@username", con);
+                cmd.Parameters.AddWithValue("@username", newUserName);
+
+                object found = cmd.ExecuteScalar();
+
+                if (found != null)
+                    return true;
+                else
+                    return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
     }
 }
