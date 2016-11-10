@@ -98,6 +98,7 @@
     <Content Include="images\img1.jpg" />
     <Content Include="js\jquery-3.1.1.min.js" />
     <Content Include="login.aspx" />
+    <Content Include="organization\can_list.aspx" />
     <Content Include="organization\can_reg.aspx" />
     <Content Include="organization\default.aspx" />
     <Content Include="organization\EleRequest.aspx" />
@@ -184,6 +185,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="organization\can_list.aspx.cs">
+      <DependentUpon>can_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="organization\can_list.aspx.designer.cs">
+      <DependentUpon>can_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="organization\can_reg.aspx.cs">
       <DependentUpon>can_reg.aspx</DependentUpon>
