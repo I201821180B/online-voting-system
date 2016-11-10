@@ -14,6 +14,11 @@
                 <asp:BoundField DataField="Reason" HeaderText="Reason for Date" SortExpression="Reason" />
                 <asp:BoundField DataField="Location" HeaderText="Location(s)" SortExpression="Location" />
                 <asp:BoundField DataField="status" HeaderText="Election Status" SortExpression="status" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="edit_btn" CssClass="btn btn-success" runat="server" CommandName="ChangeStatus" CommandArgument='<%# Bind("E_ID") %>' Text="Change Status" OnCommand="edit_btn_Command" />
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
 
