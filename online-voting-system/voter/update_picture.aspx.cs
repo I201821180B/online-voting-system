@@ -7,7 +7,6 @@ namespace online_voting_system.voter
 {
     public partial class update_picture : System.Web.UI.Page
     {
-        String uploadDir;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["login"].ToString() != "voter")

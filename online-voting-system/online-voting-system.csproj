@@ -100,6 +100,7 @@
     <Content Include="login.aspx" />
     <Content Include="organization\can_reg.aspx" />
     <Content Include="organization\default.aspx" />
+    <Content Include="organization\EleRequest.aspx" />
     <Content Include="organization\home.aspx" />
     <Content Include="organization\register.aspx" />
     <Content Include="packages.config" />
@@ -197,6 +198,13 @@
     </Compile>
     <Compile Include="organization\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="organization\EleRequest.aspx.cs">
+      <DependentUpon>EleRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="organization\EleRequest.aspx.designer.cs">
+      <DependentUpon>EleRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="organization\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>

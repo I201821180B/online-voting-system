@@ -11,6 +11,7 @@
                 <asp:MenuItem Text="Home" NavigateUrl="~/organization/home.aspx" />
                 <asp:MenuItem Text="Candidate Registration" NavigateUrl="~/organization/can_reg.aspx"/>
                 <asp:MenuItem Text="Results" NavigateUrl="#" />
+                <asp:MenuItem Text="Election Request" NavigateUrl="~/organization/EleRequest.aspx" />
             </Items>
         </asp:Menu>
     </form>
