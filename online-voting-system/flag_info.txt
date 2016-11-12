@@ -1,0 +1,3 @@
+﻿in dbo.election => Active 
+					1 : yes(true)
+					0 : no(false)
