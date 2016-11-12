@@ -14,11 +14,11 @@
                     <asp:BoundField DataField="E_Name" HeaderText="Election Name" SortExpression="E_Name" />
                     <asp:BoundField DataField="votes" HeaderText="Total Votes" ReadOnly="true" SortExpression="votes" />
                     <asp:BoundField DataField="active" HeaderText="Is Active ?" SortExpression="active" />
-                    <asp:BoundField DataField="result_generated" HeaderText="Is Result Generated ?" SortExpression="result_generated" />
+                    <asp:BoundField DataField="result_generated" ReadOnly="true" HeaderText="Is Result Generated ?" SortExpression="result_generated" />
                     <asp:CommandField ButtonType="Button" HeaderText="Action" ShowEditButton="True" ShowHeader="True" ControlStyle-CssClass="btn btn-primary" />
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT * FROM [election]" UpdateCommand="UPDATE [election] SET [vote_date] = @vote_date, [votes] = @votes, [active] = @active, [result_generated] = @result_generated, [E_Name] = @E_Name WHERE [E_Id] = @E_Id" DeleteCommand="DELETE FROM [election] WHERE [E_Id] = @E_Id" InsertCommand="INSERT INTO [election] ([vote_date], [votes], [active], [result_generated], [E_Name]) VALUES (@vote_date, @votes, @active, @result_generated, @E_Name)">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT * FROM [election]" UpdateCommand="UPDATE [election] SET [vote_date] = @vote_date, [active] = @active, [E_Name] = @E_Name WHERE [E_Id] = @E_Id" DeleteCommand="DELETE FROM [election] WHERE [E_Id] = @E_Id" InsertCommand="INSERT INTO [election] ([vote_date], [votes], [active], [result_generated], [E_Name]) VALUES (@vote_date, @votes, @active, @result_generated, @E_Name)">
                 <DeleteParameters>
                     <asp:Parameter Name="E_Id" Type="Int32" />
                 </DeleteParameters>
@@ -31,11 +31,8 @@
                 </InsertParameters>
                 <UpdateParameters>
                     <asp:Parameter DbType="Date" Name="vote_date" />
-                    <asp:Parameter Name="votes" Type="Int32" />
                     <asp:Parameter Name="active" Type="String" />
-                    <asp:Parameter Name="result_generated" Type="String" />
                     <asp:Parameter Name="E_Name" Type="String" />
-                    <asp:Parameter Name="E_Id" Type="Int32" />
                 </UpdateParameters>
                 </asp:SqlDataSource>
         </p>
