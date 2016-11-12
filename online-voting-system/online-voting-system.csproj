@@ -86,6 +86,8 @@
     <Content Include="admin\add_election.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\home.aspx" />
+    <Content Include="admin\view_active_elections.aspx" />
+    <Content Include="admin\view_elections.aspx" />
     <Content Include="App_Data\voting-db.mdf" />
     <Content Include="App_Data\voting-db_log.ldf">
       <DependentUpon>voting-db.mdf</DependentUpon>
@@ -184,6 +186,20 @@
     </Compile>
     <Compile Include="admin\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view_active_elections.aspx.cs">
+      <DependentUpon>view_active_elections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\view_active_elections.aspx.designer.cs">
+      <DependentUpon>view_active_elections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\view_elections.aspx.cs">
+      <DependentUpon>view_elections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\view_elections.aspx.designer.cs">
+      <DependentUpon>view_elections.aspx</DependentUpon>
     </Compile>
     <Compile Include="candidate\candidate_home.Master.cs">
       <DependentUpon>candidate_home.Master</DependentUpon>
