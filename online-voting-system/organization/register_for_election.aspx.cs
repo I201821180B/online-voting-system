@@ -26,30 +26,45 @@ namespace online_voting_system.organization
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
                 con.Open();
-
-                cmd.CommandText = "SELECT vote_date FROM election WHERE E_Name = @e_name";
-                cmd.Parameters.AddWithValue("@e_name", electionName);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if(rdr.HasRows)
+                // validation whether the organization has registered only one candidate or not  
+                cmd.CommandText = "SELECT E_Id FROM Candidate_Reg WHERE O_id = (SELECT O_Id from org_table WHERE User_Name = @sess_uname)";
+                cmd.Parameters.AddWithValue("@sess_uname",Session["username"].ToString());
+                SqlDataReader checker = cmd.ExecuteReader(); 
+                if(checker.HasRows)
                 {
-                    while(rdr.Read())
+                    checker.Close();
+                    reg_msg.Visible = true;
+                    reg_msg.Text = "Sorry, You are allowed to register only once !";
+                }
+                else
+                {
+                    //validate whether the organization tries to register candidate on the day of election 
+                    checker.Close();
+                    cmd.CommandText = "SELECT vote_date FROM election WHERE E_Name = @e_name";
+                    cmd.Parameters.AddWithValue("@e_name", electionName);
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.HasRows)
                     {
-                        if(rdr["vote_date"].ToString() == DateTime.Now.Date.ToString())
+                        while (rdr.Read())
                         {
-                            reg_msg.Visible = true;
-                            reg_msg.Text = "Candidate Cannot Register on the day of Election";
-                        }
-                        else
-                        {
-                            cmd.CommandText = "UPDATE Candidate_Reg SET E_Id = (SELECT E_Id FROM election WHERE E_Name = @e_name) WHERE Name = @can_name";
-                            cmd.Parameters.AddWithValue("@e_name", electionName);
-                            cmd.Parameters.AddWithValue("@can_name", candidateName);
-                            int num_rows = cmd.ExecuteNonQuery();
-                            if (num_rows > 0)
+                            if (rdr["vote_date"].ToString() == DateTime.Now.Date.ToString())
                             {
-                                Response.Redirect("home.aspx");
+                                reg_msg.Visible = true;
+                                reg_msg.Text = "Candidate Cannot Register on the day of Election";
                             }
-                            con.Close();
+                            else
+                            {
+                                //ok, allowed to register for election
+                                cmd.CommandText = "UPDATE Candidate_Reg SET E_Id = (SELECT E_Id FROM election WHERE E_Name = @e_name) WHERE Name = @can_name";
+                                cmd.Parameters.AddWithValue("@e_name", electionName);
+                                cmd.Parameters.AddWithValue("@can_name", candidateName);
+                                int num_rows = cmd.ExecuteNonQuery();
+                                if (num_rows > 0)
+                                {
+                                    Response.Redirect("home.aspx");
+                                }
+                                con.Close();
+                            }
                         }
                     }
                 }

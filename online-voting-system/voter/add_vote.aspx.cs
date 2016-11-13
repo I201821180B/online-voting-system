@@ -47,8 +47,15 @@ namespace online_voting_system.voter
                             int num_rows2a = cmd.ExecuteNonQuery();
                             if (num_rows2a > 0)
                             {
-                                // voted successful
-                                Response.Redirect("home.aspx");
+                                // voted successful, so update the flags for security purposes
+                                cmd.CommandText = "UPDATE voter_reg SET last_e_id = @elecid WHERE username = @usernm";
+                                cmd.Parameters.AddWithValue("@elecid", e_id);
+                                cmd.Parameters.AddWithValue("@usernm", Session["username"]);
+                                if (cmd.ExecuteNonQuery() > 0)
+                                {
+                                    // finally, go home
+                                    Response.Redirect("home.aspx");
+                                }
                             }
                         }
                         else
@@ -62,8 +69,15 @@ namespace online_voting_system.voter
                             int num_rows2b = cmd.ExecuteNonQuery();
                             if (num_rows2b > 0)
                             {
-                                // voted successful
-                                Response.Redirect("home.aspx");
+                                // voted successful, so update the flags for security purposes
+                                cmd.CommandText = "UPDATE voter_reg SET last_e_id = @elid WHERE username = @usename";
+                                cmd.Parameters.AddWithValue("@elid", e_id);
+                                cmd.Parameters.AddWithValue("@usename",Session["username"]);
+                                if(cmd.ExecuteNonQuery() > 0)
+                                {
+                                    // finally, go home
+                                    Response.Redirect("home.aspx");
+                                }
                             }
                         }
                     }

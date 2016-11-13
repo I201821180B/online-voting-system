@@ -6,7 +6,7 @@
     <form id="form1" runat="server" class="form-horizontal">
         <div class="container-fluid">
             <div class="jumbotron">
-                <h1>Vote</h1>
+                <h1>Select Election</h1>
             </div>
                 <asp:GridView ID="GridView1" EmptyDataText="No Elections open !" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
                     <Columns>
@@ -21,6 +21,7 @@
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [E_Id],[E_Name] FROM [election] WHERE ([active] = @active) AND vote_date = cast(GETDATE() as date)">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="yes" Name="active" Type="String" />
+                        <asp:SessionParameter DefaultValue="" Name="username" SessionField="username" />
                     </SelectParameters>
                 </asp:SqlDataSource>
         </div>
