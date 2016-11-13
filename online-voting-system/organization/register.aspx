@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="username">Username:</label>
                         <div class="col-sm-6"> 
-                          <asp:TextBox ID="username" runat="server" CssClass="form-control" OnChange ="CheckUserName(this)"></asp:TextBox>
+                          <asp:TextBox ID="username" runat="server" MaxLength="20" CssClass="form-control" OnChange ="CheckUserName(this)"></asp:TextBox>
                         </div>
                         <asp:Label ID="lblStatus" runat="server" EnableViewState="true"/>
                         <asp:RequiredFieldValidator ID="username_req" runat="server" ControlToValidate="username" Text="*" ForeColor="Red" ErrorMessage="Please Enter the Username" />

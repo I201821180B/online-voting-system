@@ -27,7 +27,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="username">Username:</label>
                 <div class="col-sm-6">
-                    <asp:TextBox ID="username" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="username" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
                 </div>
                 <asp:RequiredFieldValidator ID="username_required" runat="server" ControlToValidate="username" Text="*" ForeColor="Red" ErrorMessage="Please Enter Username"/>
               </div>

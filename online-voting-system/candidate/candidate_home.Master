@@ -4,7 +4,6 @@
 
 <html>
 <head runat="server">
-    <title>Candidate Home</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -27,6 +26,9 @@
                   <a class="navbar-brand" href="home.aspx">Candidate Home</a>
                 </div>
                   <div class="collapse navbar-collapse" id="myNavbar">
+                      <ul class="nav navbar-nav">
+                          <li><a href="change_party.aspx">Change Organization</a></li>
+                      </ul>
                       <ul class="nav navbar-nav navbar-right">
                           <li><a href="../logout.aspx"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
                       </ul>
