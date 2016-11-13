@@ -109,6 +109,7 @@
     <Content Include="organization\default.aspx" />
     <Content Include="organization\home.aspx" />
     <Content Include="organization\register.aspx" />
+    <Content Include="organization\register_for_election.aspx" />
     <Content Include="packages.config" />
     <Content Include="css\glyphicons-halflings-regular.eot" />
     <Content Include="css\glyphicons-halflings-regular.ttf" />
@@ -119,17 +120,20 @@
     <Content Include="organization\org_home.Master" />
     <Content Include="logout.aspx" />
     <Content Include="scripts\jquery-3.1.0.min.js" />
+    <Content Include="voter\add_vote.aspx" />
     <Content Include="voter\change_password.aspx" />
     <Content Include="voter\current_elections.aspx" />
     <Content Include="voter\home.aspx" />
     <Content Include="voter\update_picture.aspx" />
     <Content Include="voter\update_profile.aspx" />
+    <Content Include="voter\vote.aspx" />
     <Content Include="voter\voter_home.Master" />
     <Content Include="candidate\candidate_home.Master" />
     <Content Include="voter\showImage.ashx" />
     <Content Include="candidate\showCanImage.ashx" />
     <Content Include="admin\admin_panel.Master" />
     <Content Include="admin\admin_panel_home.Master" />
+    <Content Include="voter\showCanImage.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -142,6 +146,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="css\glyphicons-halflings-regular.svg" />
     <Content Include="register.aspx" />
+    <Content Include="voter\vote_action.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -298,6 +303,13 @@
     <Compile Include="organization\register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="organization\register_for_election.aspx.cs">
+      <DependentUpon>register_for_election.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="organization\register_for_election.aspx.designer.cs">
+      <DependentUpon>register_for_election.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -312,6 +324,13 @@
     </Compile>
     <Compile Include="logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="voter\add_vote.aspx.cs">
+      <DependentUpon>add_vote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voter\add_vote.aspx.designer.cs">
+      <DependentUpon>add_vote.aspx</DependentUpon>
     </Compile>
     <Compile Include="voter\change_password.aspx.cs">
       <DependentUpon>change_password.aspx</DependentUpon>
@@ -334,6 +353,9 @@
     <Compile Include="voter\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="voter\showCanImage.ashx.cs">
+      <DependentUpon>showCanImage.ashx</DependentUpon>
+    </Compile>
     <Compile Include="voter\showImage.ashx.cs">
       <DependentUpon>showImage.ashx</DependentUpon>
     </Compile>
@@ -351,12 +373,26 @@
     <Compile Include="voter\update_profile.aspx.designer.cs">
       <DependentUpon>update_profile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="voter\vote.aspx.cs">
+      <DependentUpon>vote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voter\vote.aspx.designer.cs">
+      <DependentUpon>vote.aspx</DependentUpon>
+    </Compile>
     <Compile Include="voter\voter_home.Master.cs">
       <DependentUpon>voter_home.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="voter\voter_home.Master.designer.cs">
       <DependentUpon>voter_home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="voter\vote_action.aspx.cs">
+      <DependentUpon>vote_action.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voter\vote_action.aspx.designer.cs">
+      <DependentUpon>vote_action.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

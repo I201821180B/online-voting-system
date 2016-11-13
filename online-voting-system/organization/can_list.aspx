@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/organization/org_home.Master" AutoEventWireup="true" CodeBehind="can_list.aspx.cs" Inherits="online_voting_system.organization.can_list" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Online Voting System - View/Delete Candidate List</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">

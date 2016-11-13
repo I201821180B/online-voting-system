@@ -28,7 +28,7 @@
                   <div class="collapse navbar-collapse" id="myNavbar">
                       <ul class="nav navbar-nav">
                           <li><a href="update_profile.aspx">Update Profile</a></li>
-                          <li><a href="current_elections.aspx">Current Elections</a></li>
+                          <li><a href="vote.aspx">Start Voting</a></li>
                           <li><a href="#">Election Results</a></li>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
