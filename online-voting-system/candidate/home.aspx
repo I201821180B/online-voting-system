@@ -19,10 +19,6 @@
                             <td><asp:Label ID="User_NameLabel" runat="server" Text='<%# Bind("User_Name") %>' /></td>
                         </tr>
                         <tr>
-                            <td>Address : </td>
-                            <td><asp:Label ID="AddressLabel" runat="server" Text='<%# Bind("Address") %>' /></td>
-                        </tr>
-                        <tr>
                             <td>Picture : </td>
                             <td><asp:Image ID="C_IdLabel" runat="server" ImageUrl='<%# "showCanImage.ashx?id="+ Eval("C_Id")  %>' Height="200" Width="200" BackColor="Gray"/></td>
                         </tr>
@@ -30,7 +26,7 @@
                     <br />
                 </ItemTemplate>
             </asp:FormView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [Name], [Address], [C_Id], [User_Name] FROM [Candidate_Reg] WHERE ([User_Name] = @User_Name)">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [Name], [C_Id], [User_Name] FROM [Candidate_Reg] WHERE ([User_Name] = @User_Name)">
                 <SelectParameters>
                     <asp:SessionParameter Name="User_Name" SessionField="username" Type="String" />
                 </SelectParameters>

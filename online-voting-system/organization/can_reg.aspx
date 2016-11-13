@@ -14,13 +14,6 @@
                   <asp:RequiredFieldValidator ID="cname_required" runat="server" ControlToValidate="cname" Text="*" ForeColor="Red" ErrorMessage="Please Enter Name"/>
               </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="cadd">Candidate Address:</label>
-                <div class="col-sm-6">
-                  <asp:TextBox ID="cadd" TextMode="MultiLine" Rows="6" Height="150" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                  <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="cadd" Text="*" ForeColor="Red" ErrorMessage="Please Enter Address"/>
-              </div>
-            <div class="form-group">
                 <label class="control-label col-sm-2" for="cphoto">Candidate Photo:</label>
                 <div class="col-sm-6">
                   <asp:FileUpload ID="cphoto" runat="server" CssClass="form-control" />

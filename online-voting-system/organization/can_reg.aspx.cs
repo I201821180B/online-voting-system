@@ -41,7 +41,7 @@ namespace online_voting_system.organization
 
         protected void reg_button_Click(object sender, EventArgs e)
         {
-            String can_name, can_username, can_address, can_pass;
+            String can_name, can_username, can_pass;
             String uname_available = hidden.Value;
             if(uname_available == "username available")
             {
@@ -73,7 +73,6 @@ namespace online_voting_system.organization
                     cphoto.PostedFile.InputStream.Read(pic, 0, length);
                     can_name = cname.Text.ToString();
                     can_username = username.Text.ToString();
-                    can_address = cadd.Text.ToString();
                     can_pass = password.Text.ToString();
 
                     SqlConnection con = new SqlConnection();
@@ -81,9 +80,8 @@ namespace online_voting_system.organization
                     SqlCommand cmd = new SqlCommand();
                     con.Open();
                     cmd.Connection = con;
-                    cmd.CommandText = "INSERT INTO Candidate_Reg (Name,Address,Image,User_Name,Password,O_Id) VALUES (@name,@address,@image,@user_name,@password,(SELECT O_Id FROM org_table WHERE User_Name = @sess_username))";
+                    cmd.CommandText = "INSERT INTO Candidate_Reg (Name,Image,User_Name,Password,O_Id) VALUES (@name,@image,@user_name,@password,(SELECT O_Id FROM org_table WHERE User_Name = @sess_username))";
                     cmd.Parameters.AddWithValue("@name", can_name);
-                    cmd.Parameters.AddWithValue("@address", can_address);
                     cmd.Parameters.AddWithValue("@image", pic);
                     cmd.Parameters.AddWithValue("@user_name", can_username);
                     cmd.Parameters.AddWithValue("@password",can_pass);
@@ -98,6 +96,7 @@ namespace online_voting_system.organization
                     {
                         // Registration Failure...
                     }
+                    con.Close();
                 }
             }
             else

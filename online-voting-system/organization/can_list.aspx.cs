@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI.WebControls;
 
 namespace online_voting_system.organization
 {
@@ -10,6 +11,15 @@ namespace online_voting_system.organization
             {
                 Session.Abandon();
                 Response.Redirect("../login.aspx");
+            }
+        }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if(e.Row.RowType == DataControlRowType.DataRow)
+            {
+                Button del = (Button)e.Row.Cells[4].Controls[0];
+                del.OnClientClick = "if(!confirm('Are you sure you want to delete this Candidate?')) return;";
             }
         }
     }
