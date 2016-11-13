@@ -34,12 +34,17 @@ namespace online_voting_system.admin
                     cmd.Parameters.AddWithValue("@e_id", id);
                     if (cmd.ExecuteNonQuery() > 0)
                     {
-                        cmd.CommandText = "UPDATE voter_reg SET last_e_id = NULL WHERE E_Id = @elecid";
+                        cmd.CommandText = "UPDATE voter_reg SET last_e_id = NULL WHERE last_e_id = @elecid";
                         cmd.Parameters.AddWithValue("@elecid", id);
                         if (cmd.ExecuteNonQuery() > 0)
                         {
-                            // election stopped successfully
-                            Response.Redirect(Request.RawUrl);
+                            cmd.CommandText = "UPDATE election SET over = 'yes' WHERE E_Id = @elid";
+                            cmd.Parameters.AddWithValue("@elid", id);
+                            if(cmd.ExecuteNonQuery() > 0)
+                            {
+                                // election stopped successfully
+                                Response.Redirect("home.aspx");
+                            }
                         }
                     }
                 }

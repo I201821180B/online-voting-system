@@ -30,7 +30,7 @@
                           <li><a href="add_election.aspx">Add Election</a></li>
                           <li><a href="view_elections.aspx">View/Edit Elections</a></li>
                           <li><a href="view_active_elections.aspx">View Active Elections</a></li>
-                          <li><a href="#">Generate Results</a></li>
+                          <li><a href="count_results.aspx">Generate Results</a></li>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
                           <li><a href="../logout.aspx"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>

@@ -84,8 +84,10 @@
   <ItemGroup>
     <Content Include="about.aspx" />
     <Content Include="admin\add_election.aspx" />
+    <Content Include="admin\count_results.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\home.aspx" />
+    <Content Include="admin\results.aspx" />
     <Content Include="admin\view_active_elections.aspx" />
     <Content Include="admin\view_elections.aspx" />
     <Content Include="App_Data\voting-db.mdf" />
@@ -171,6 +173,13 @@
     <Compile Include="admin\admin_panel.Master.designer.cs">
       <DependentUpon>admin_panel.Master</DependentUpon>
     </Compile>
+    <Compile Include="admin\count_results.aspx.cs">
+      <DependentUpon>count_results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\count_results.aspx.designer.cs">
+      <DependentUpon>count_results.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,6 +200,13 @@
     </Compile>
     <Compile Include="admin\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\results.aspx.cs">
+      <DependentUpon>results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\results.aspx.designer.cs">
+      <DependentUpon>results.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\view_active_elections.aspx.cs">
       <DependentUpon>view_active_elections.aspx</DependentUpon>

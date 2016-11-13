@@ -14,6 +14,7 @@
                     <asp:BoundField DataField="E_Name" HeaderText="Election Name" SortExpression="E_Name" />
                     <asp:BoundField DataField="votes" HeaderText="Total Votes" ReadOnly="true" SortExpression="votes" />
                     <asp:BoundField DataField="active" HeaderText="Is Active ?" ReadOnly="true" SortExpression="active" />
+                    <asp:BoundField DataField="over" HeaderText="Is Over ?" ReadOnly="true" SortExpression="over" />
                     <asp:BoundField DataField="result_generated" ReadOnly="true" HeaderText="Is Result Generated ?" SortExpression="result_generated" />
                     <asp:CommandField ButtonType="Button" HeaderText="Edit" ShowEditButton="True" ShowHeader="True" ControlStyle-CssClass="btn btn-primary" />
                     <asp:TemplateField>

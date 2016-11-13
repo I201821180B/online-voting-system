@@ -27,7 +27,7 @@ namespace online_voting_system.organization
                 cmd.Connection = con;
                 con.Open();
                 // validation whether the organization has registered only one candidate or not  
-                cmd.CommandText = "SELECT E_Id FROM Candidate_Reg WHERE O_id = (SELECT O_Id from org_table WHERE User_Name = @sess_uname)";
+                cmd.CommandText = "SELECT E_Id FROM Candidate_Reg WHERE O_id = (SELECT O_Id from org_table WHERE User_Name = @sess_uname) AND E_Id != NULL";
                 cmd.Parameters.AddWithValue("@sess_uname",Session["username"].ToString());
                 SqlDataReader checker = cmd.ExecuteReader(); 
                 if(checker.HasRows)
@@ -40,8 +40,8 @@ namespace online_voting_system.organization
                 {
                     //validate whether the organization tries to register candidate on the day of election 
                     checker.Close();
-                    cmd.CommandText = "SELECT vote_date FROM election WHERE E_Name = @e_name";
-                    cmd.Parameters.AddWithValue("@e_name", electionName);
+                    cmd.CommandText = "SELECT vote_date FROM election WHERE E_Name = @elname";
+                    cmd.Parameters.AddWithValue("@elname", electionName);
                     SqlDataReader rdr = cmd.ExecuteReader();
                     if (rdr.HasRows)
                     {
@@ -54,7 +54,8 @@ namespace online_voting_system.organization
                             }
                             else
                             {
-                                //ok, allowed to register for election
+                            //ok, allowed to register for election
+                                rdr.Close();
                                 cmd.CommandText = "UPDATE Candidate_Reg SET E_Id = (SELECT E_Id FROM election WHERE E_Name = @e_name) WHERE Name = @can_name";
                                 cmd.Parameters.AddWithValue("@e_name", electionName);
                                 cmd.Parameters.AddWithValue("@can_name", candidateName);
