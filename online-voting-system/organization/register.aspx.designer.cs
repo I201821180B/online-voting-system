@@ -40,42 +40,6 @@ namespace online_voting_system.organization {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator oname_req;
         
         /// <summary>
-        /// addr control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox addr;
-        
-        /// <summary>
-        /// addr_req control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator addr_req;
-        
-        /// <summary>
-        /// city control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox city;
-        
-        /// <summary>
-        /// city_req control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator city_req;
-        
-        /// <summary>
         /// email control.
         /// </summary>
         /// <remarks>

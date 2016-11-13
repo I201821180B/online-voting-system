@@ -14,20 +14,6 @@
                 </div>
                     <asp:RequiredFieldValidator ID="oname_req" runat="server" ControlToValidate="oname" Text="*" ForeColor="Red" ErrorMessage="Please Enter the Organization Name" />
               </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="addr">Address:</label>
-                <div class="col-sm-6">
-                  <asp:TextBox ID="addr" runat="server" TextMode="MultiLine" CssClass="form-control text-capitalize" Rows="6" Height="150"></asp:TextBox>
-                </div>
-                <asp:RequiredFieldValidator ID="addr_req" runat="server" ControlToValidate="addr" Text="*" ForeColor="Red" ErrorMessage="Please Enter the Organization Address" />
-              </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="city">City:</label>
-                <div class="col-sm-6">
-                  <asp:TextBox ID="city" runat="server" CssClass="form-control text-capitalize"></asp:TextBox>
-                </div>
-                <asp:RequiredFieldValidator ID="city_req" runat="server" ControlToValidate="city" Text="*" ForeColor="Red" ErrorMessage="Please Enter the Organization City" />
-              </div>
               <div class="form-group">
                 <label class="control-label col-sm-2" for="email">Email:</label>
                 <div class="col-sm-6"> 

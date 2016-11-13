@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/voter/voter_home.Master" AutoEventWireup="true" CodeBehind="vote_action.aspx.cs" Inherits="online_voting_system.voter.vote_action" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Online Voting System - Vote</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server" class="form-horizontal">

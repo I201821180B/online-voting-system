@@ -8,15 +8,20 @@
             <h1 class="jumbotron">View Active Elections</h1>
         </div>
         <p>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CssClass="table table-bordered table-responsive table-condensed">
+            <asp:GridView ID="GridView1" EmptyDataText="No Active Elections found !" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CssClass="table table-bordered table-responsive table-condensed">
                 <Columns>
                     <asp:BoundField DataField="vote_date" HeaderText="Date Of Election" SortExpression="vote_date" />
                     <asp:BoundField DataField="E_Name" HeaderText="Election Name" SortExpression="E_Name" />
                     <asp:BoundField DataField="votes" HeaderText="Total Votes" SortExpression="votes" />
                     <asp:BoundField DataField="result_generated" HeaderText="Is Result generated ?" SortExpression="result_generated" />
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button ID="stop_elec_btn" runat="server" CommandName="StopElecBtn" CommandArgument='<%# Eval("E_Id") %>' OnCommand="stop_elec_btn_Command" Text="Stop Election" CssClass="btn btn-warning" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-&nbsp;<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [vote_date], [votes], [result_generated], [E_Name] FROM [election] WHERE ([active] = @active)">
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [E_Id],[vote_date], [votes], [result_generated], [E_Name] FROM [election] WHERE ([active] = @active)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="yes" Name="active" Type="String" />
                 </SelectParameters>
