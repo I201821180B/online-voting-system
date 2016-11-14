@@ -9,7 +9,7 @@
                 <h1>Count Votes</h1>
             </div>
             <p>
-                <asp:GridView ID="GridView1" CssClass="table table-hover table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="E_Id" DataSourceID="SqlDataSource1">
+                <asp:GridView ID="GridView1" EmptyDataText="No Elections Found !" CssClass="table table-hover table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="E_Id" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:BoundField DataField="vote_date" HeaderText="Date Of Election" SortExpression="vote_date" />
                         <asp:BoundField DataField="votes" HeaderText="Vote Count" SortExpression="votes" />
@@ -21,9 +21,10 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [E_Id], [vote_date], [votes], [active], [over], [E_Name] FROM [election] WHERE ([over] = @over) AND [vote_date] <= cast(GETDATE() as date)">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [E_Id], [vote_date], [votes], [active], [over], [E_Name] FROM [election] WHERE ([over] = @over) AND [active] = @active">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="yes" Name="over" Type="String" />
+                        <asp:Parameter DefaultValue="no" Name="active" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
 
