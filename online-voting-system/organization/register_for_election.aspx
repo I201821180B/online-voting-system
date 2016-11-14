@@ -26,7 +26,7 @@
                     Your Candidate for this election : 
                 </label>
                 <div class="col-sm-6">
-                    <asp:DropDownList ID="candidate_name" runat="server" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="Name" AppendDataBoundItems="true">
+                    <asp:DropDownList ID="candidate_name" CssClass="form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="Name" AppendDataBoundItems="true">
                         <Items>
                             <asp:ListItem Text="Select..." Value="NA" />
                         </Items>
