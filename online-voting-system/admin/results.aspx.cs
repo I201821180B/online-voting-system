@@ -22,7 +22,7 @@ namespace online_voting_system.admin
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
                 con.Open();
-                cmd.CommandText = "SELECT Total_Vote,O_Id,C_Id,E_Id FROM election_result WHERE E_Id = @e_id AND Total_Vote = MAX(Total_Vote)";
+                cmd.CommandText = "SELECT Total_Vote,E_Id,C_Id,O_Id FROM election_result WHERE Total_Vote IN (SELECT MAX(Total_Vote) FROM election_result) AND E_Id = @e_id";
                 cmd.Parameters.AddWithValue("@e_id", id);
                 SqlDataReader results = cmd.ExecuteReader();
                 if(results.HasRows)
@@ -44,7 +44,7 @@ namespace online_voting_system.admin
                 if(cmd.ExecuteNonQuery() > 0)
                 {
                     //insertion to winner table successful
-                    Response.Redirect("home.aspx");
+                    Response.Redirect("home.aspx?m="+Server.UrlEncode("Result Generated Succesfully !"));
                 }
             }
         }

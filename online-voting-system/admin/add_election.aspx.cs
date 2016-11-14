@@ -33,7 +33,7 @@ namespace online_voting_system.admin
             if(num_rows > 0)
             {
                 //election added successfully
-                Response.Redirect("home.aspx");
+                Response.Redirect("home.aspx?m="+Server.UrlEncode("Election Added Successfully !"));
             }
             else
             {

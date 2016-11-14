@@ -96,6 +96,7 @@
     </Content>
     <Content Include="candidate\change_party.aspx" />
     <Content Include="candidate\home.aspx" />
+    <Content Include="candidate\view_results.aspx" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\party2.png" />
@@ -112,6 +113,7 @@
     <Content Include="organization\home.aspx" />
     <Content Include="organization\register.aspx" />
     <Content Include="organization\register_for_election.aspx" />
+    <Content Include="organization\view_results.aspx" />
     <Content Include="packages.config" />
     <Content Include="css\glyphicons-halflings-regular.eot" />
     <Content Include="css\glyphicons-halflings-regular.ttf" />
@@ -128,6 +130,7 @@
     <Content Include="voter\home.aspx" />
     <Content Include="voter\update_picture.aspx" />
     <Content Include="voter\update_profile.aspx" />
+    <Content Include="voter\view_results.aspx" />
     <Content Include="voter\vote.aspx" />
     <Content Include="voter\voter_home.Master" />
     <Content Include="candidate\candidate_home.Master" />
@@ -246,6 +249,13 @@
     <Compile Include="candidate\showCanImage.ashx.cs">
       <DependentUpon>showCanImage.ashx</DependentUpon>
     </Compile>
+    <Compile Include="candidate\view_results.aspx.cs">
+      <DependentUpon>view_results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="candidate\view_results.aspx.designer.cs">
+      <DependentUpon>view_results.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -326,6 +336,13 @@
     <Compile Include="organization\register_for_election.aspx.designer.cs">
       <DependentUpon>register_for_election.aspx</DependentUpon>
     </Compile>
+    <Compile Include="organization\view_results.aspx.cs">
+      <DependentUpon>view_results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="organization\view_results.aspx.designer.cs">
+      <DependentUpon>view_results.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -388,6 +405,13 @@
     </Compile>
     <Compile Include="voter\update_profile.aspx.designer.cs">
       <DependentUpon>update_profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="voter\view_results.aspx.cs">
+      <DependentUpon>view_results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voter\view_results.aspx.designer.cs">
+      <DependentUpon>view_results.aspx</DependentUpon>
     </Compile>
     <Compile Include="voter\vote.aspx.cs">
       <DependentUpon>vote.aspx</DependentUpon>

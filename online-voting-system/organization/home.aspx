@@ -4,17 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
-    <h1> Organization Home </h1>
     <form runat="server">
-        <asp:Menu ID="Menu1" runat="server">
-            <Items>
-                <asp:MenuItem Text="Home" NavigateUrl="~/organization/home.aspx" />
-                <asp:MenuItem Text="Candidate Registration" NavigateUrl="~/organization/can_reg.aspx"/>
-                <asp:MenuItem Text="Results" NavigateUrl="#" />
-                <asp:MenuItem Text="Register For Election" NavigateUrl="~/organization/register_for_election.aspx" />
-                <asp:MenuItem Text="View/Delete Candidate List" NavigateUrl="~/organization/can_list.aspx" />
-            </Items>
-        </asp:Menu>
+        <div class="jumbotron">
+            <h2>Homepage - Online Voting System Organization Panel</h2>
+        </div>
     </form>
 </div>
 </asp:Content>
