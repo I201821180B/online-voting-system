@@ -11,6 +11,11 @@ namespace online_voting_system.organization
                 Session.Abandon();
                 Response.Redirect("../login.aspx");
             }
+            if(Request.QueryString["m"] != null)
+            {
+                msg_lbl.Visible = true;
+                msg_lbl.Text = Request.QueryString["m"].ToString();
+            }
         }
     }
 }

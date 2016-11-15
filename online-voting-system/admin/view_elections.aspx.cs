@@ -36,7 +36,7 @@ namespace online_voting_system.admin
         {
             for(int i = 0; i< GridView1.Rows.Count;i++)
             {
-                if(GridView1.Rows[i].Cells[4].Text == "yes" || GridView1.Rows[i].Cells[5].Text == "yes" || GridView1.Rows[i].Cells[1].Text == DateTime.Now.Date.ToString())
+                if(GridView1.Rows[i].Cells[4].Text == "yes" || GridView1.Rows[i].Cells[5].Text == "yes")
                 {
                     GridView1.Rows[i].Cells[8].Visible = false;
                 }

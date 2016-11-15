@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Web;
 using System.Web.Configuration;
 
 namespace online_voting_system.organization
@@ -26,20 +27,9 @@ namespace online_voting_system.organization
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
                 con.Open();
-                // validation whether the organization has registered only one candidate or not  
-                cmd.CommandText = "SELECT E_Id FROM Candidate_Reg WHERE O_id = (SELECT O_Id from org_table WHERE User_Name = @sess_uname) AND E_Id != NULL";
-                cmd.Parameters.AddWithValue("@sess_uname",Session["username"].ToString());
-                SqlDataReader checker = cmd.ExecuteReader(); 
-                if(checker.HasRows)
+                if(hidden.Value == "Registration Available")
                 {
-                    checker.Close();
-                    reg_msg.Visible = true;
-                    reg_msg.Text = "Sorry, You are allowed to register only once !";
-                }
-                else
-                {
-                    //validate whether the organization tries to register candidate on the day of election 
-                    checker.Close();
+                    //validate whether the organization tries to register candidate on the day of election
                     cmd.CommandText = "SELECT vote_date FROM election WHERE E_Name = @elname";
                     cmd.Parameters.AddWithValue("@elname", electionName);
                     SqlDataReader rdr = cmd.ExecuteReader();
@@ -62,18 +52,48 @@ namespace online_voting_system.organization
                                 int num_rows = cmd.ExecuteNonQuery();
                                 if (num_rows > 0)
                                 {
-                                    Response.Redirect("home.aspx");
+                                    Response.Redirect("home.aspx?m="+Server.UrlEncode("Candidate Registered Successfully for this election !"));
                                 }
                                 con.Close();
                             }
                         }
                     }
                 }
+                else
+                {
+                    reg_msg.Visible = true;
+                    reg_msg.Text = "Only One-Time Registration is allowed for this election !";
+                }
             }
             else
             {
                 reg_msg.Visible = true;
                 reg_msg.Text = "Please, Enter Some Value !";
+            }
+        }
+
+        [System.Web.Services.WebMethod(EnableSession=true)]
+        public static bool IsRegisteredChecker(string electionName)
+        {
+            if (electionName != null)
+            {
+                SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["db_conn"].ConnectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT E_Id FROM Candidate_Reg WHERE (O_Id IN (SELECT O_Id FROM org_table WHERE User_Name = @sess_uname) AND E_Id IS NOT NULL)";
+                cmd.Parameters.AddWithValue("@sess_uname", HttpContext.Current.Session["username"].ToString());
+                
+                object found = cmd.ExecuteScalar();
+
+                if (found != null)
+                    return true;
+                else
+                    return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

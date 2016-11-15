@@ -16,8 +16,8 @@
                     <asp:BoundField DataField="active" HeaderText="Is Active ?" ReadOnly="true" SortExpression="active" />
                     <asp:BoundField DataField="over" HeaderText="Is Over ?" ReadOnly="true" SortExpression="over" />
                     <asp:BoundField DataField="result_generated" ReadOnly="true" HeaderText="Is Result Generated ?" SortExpression="result_generated" />
-                    <asp:CommandField ButtonType="Button" HeaderText="Edit" ShowEditButton="True" ShowHeader="True" ControlStyle-CssClass="btn btn-primary" />
-                    <asp:TemplateField>
+                    <asp:CommandField ButtonType="Button" ShowEditButton="True" HeaderText="Edit" ShowHeader="true" ControlStyle-CssClass="btn btn-primary" />
+                    <asp:TemplateField ShowHeader="false">
                         <ItemTemplate>
                             <asp:Button CssClass="btn btn-success" ID="start_elec_btn" runat="server" Text="Start Election" CommandArgument='<%# Eval("E_Id") %>' CommandName="StartElection" OnCommand="start_elec_btn_Command" />
                         </ItemTemplate>

@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
     <form runat="server">
+        <asp:Label ID="msg_lbl" runat="server" CssClass="alert alert-info" Visible="false" />
         <div class="jumbotron">
             <h2>Homepage - Online Voting System Organization Panel</h2>
         </div>

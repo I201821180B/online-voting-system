@@ -90,7 +90,7 @@ namespace online_voting_system.organization
                     if(num_rows > 0)
                     {
                         // Registration Success...
-                        Response.Redirect("home.aspx");
+                        Response.Redirect("home.aspx?m="+Server.UrlEncode("Candidate Registered Successfully !"));
                     }
                     else
                     {
