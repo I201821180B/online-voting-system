@@ -26,7 +26,7 @@ namespace online_voting_system.admin
                 cmd.Connection = con;
                 con.Open();
 
-                cmd.CommandText = "UPDATE election SET active = 'no' WHERE E_Id = @electionid";
+                cmd.CommandText = "UPDATE election SET active = 'no', [over] = 'yes' WHERE E_Id = @electionid";
                 cmd.Parameters.AddWithValue("@electionid", id);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -38,13 +38,8 @@ namespace online_voting_system.admin
                         cmd.Parameters.AddWithValue("@elecid", id);
                         if (cmd.ExecuteNonQuery() > 0)
                         {
-                            cmd.CommandText = "UPDATE election SET over = 'yes' WHERE E_Id = @elid";
-                            cmd.Parameters.AddWithValue("@elid", id);
-                            if(cmd.ExecuteNonQuery() > 0)
-                            {
-                                // election stopped successfully
-                                Response.Redirect("home.aspx");
-                            }
+                            // election stopped successfully
+                            Response.Redirect("home.aspx");
                         }
                     }
                 }

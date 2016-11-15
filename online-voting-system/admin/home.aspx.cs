@@ -15,7 +15,9 @@ namespace online_voting_system.admin
             {
                 username_text.Text = Session["username"].ToString();
             }
-            if(Request.QueryString["m"].ToString() != null)
+            if(Request.QueryString["m"] == null)
+            {}
+            else
             {
                 message_text.Visible = true;
                 message_text.Text = Request.QueryString["m"].ToString();

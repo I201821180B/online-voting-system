@@ -29,7 +29,7 @@
                       <ul class="nav navbar-nav">
                           <li><a href="update_profile.aspx">Update Profile</a></li>
                           <li><a href="vote.aspx">Start Voting</a></li>
-                          <li><a href="#">Election Results</a></li>
+                          <li><a href="view_results.aspx">Election Results</a></li>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
                           <li><a href="change_password.aspx">Change Password</a></li>
