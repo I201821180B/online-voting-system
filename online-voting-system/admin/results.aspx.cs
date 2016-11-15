@@ -43,8 +43,14 @@ namespace online_voting_system.admin
                 cmd.Parameters.AddWithValue("@eleid", elec_id);
                 if(cmd.ExecuteNonQuery() > 0)
                 {
-                    //insertion to winner table successful
-                    Response.Redirect("home.aspx?m="+Server.UrlEncode("Result Generated Succesfully !"));
+                    //insertion to winner table successful, update flags
+                    cmd.CommandText = "UPDATE election SET result_generated = 'yes' WHERE E_Id = @election_id";
+                    cmd.Parameters.AddWithValue("@election_id", elec_id);
+                    if(cmd.ExecuteNonQuery() > 0)
+                    {
+                        //go home with message..
+                        Response.Redirect("home.aspx?m=" + Server.UrlEncode("Result Generated Succesfully !"));
+                    }
                 }
             }
         }

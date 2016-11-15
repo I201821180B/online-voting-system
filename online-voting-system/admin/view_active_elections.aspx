@@ -21,9 +21,11 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [E_Id],[vote_date], [votes], [result_generated], [E_Name] FROM [election] WHERE ([active] = @active)">
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Online-Voting-SystemConnectionString %>" SelectCommand="SELECT [E_Id],[vote_date], [votes], [result_generated], [E_Name] FROM [election] WHERE ([active] = @active AND [over] = @over AND [result_generated] = @result_generated)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="yes" Name="active" Type="String" />
+                    <asp:Parameter DefaultValue="no" Name="over" Type="String" />
+                    <asp:Parameter DefaultValue="no" Name="result_generated" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
         </p>
