@@ -139,6 +139,7 @@
     <Content Include="admin\admin_panel.Master" />
     <Content Include="admin\admin_panel_home.Master" />
     <Content Include="voter\showCanImage.ashx" />
+    <Content Include="organization\getCanImage.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -300,6 +301,9 @@
     </Compile>
     <Compile Include="organization\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="organization\getCanImage.ashx.cs">
+      <DependentUpon>getCanImage.ashx</DependentUpon>
     </Compile>
     <Compile Include="organization\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>

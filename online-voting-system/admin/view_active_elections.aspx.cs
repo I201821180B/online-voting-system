@@ -30,10 +30,6 @@ namespace online_voting_system.admin
                 cmd.Parameters.AddWithValue("@electionid", id);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    cmd.CommandText = "UPDATE Candidate_Reg SET E_Id = NULL WHERE E_Id = @e_id";
-                    cmd.Parameters.AddWithValue("@e_id", id);
-                    if (cmd.ExecuteNonQuery() > 0)
-                    {
                         cmd.CommandText = "UPDATE voter_reg SET last_e_id = NULL WHERE last_e_id = @elecid";
                         cmd.Parameters.AddWithValue("@elecid", id);
                         if (cmd.ExecuteNonQuery() > 0)
@@ -41,7 +37,6 @@ namespace online_voting_system.admin
                             // election stopped successfully
                             Response.Redirect("home.aspx");
                         }
-                    }
                 }
 
                 con.Close();

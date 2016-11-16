@@ -48,8 +48,11 @@ namespace online_voting_system.admin
                     cmd.Parameters.AddWithValue("@election_id", elec_id);
                     if(cmd.ExecuteNonQuery() > 0)
                     {
-                        //go home with message..
-                        Response.Redirect("home.aspx?m=" + Server.UrlEncode("Result Generated Succesfully !"));
+                        
+                        cmd.CommandText = "UPDATE Candidate_Reg SET Votes = 0, E_Id = NULL WHERE E_Id = @electionid";
+                        cmd.Parameters.AddWithValue("@electionid", elec_id);
+                        if(cmd.ExecuteNonQuery() > 0)           //go home with message..
+                            Response.Redirect("home.aspx?m=" + Server.UrlEncode("Result Generated Succesfully !"));
                     }
                 }
             }
