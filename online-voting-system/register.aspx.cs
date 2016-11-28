@@ -29,11 +29,9 @@ namespace online_voting_system
             String uname_status = hidden.Value;
             if(uname_status == "username available")
             {
-                    String votername, uname, pass, cityname,reg_msg=null,def_pro_pic=null;
-
-                    def_pro_pic = Server.MapPath("userimage.png");
+                String votername, uname, pass, cityname, reg_msg = null;
                     MemoryStream stream = new MemoryStream();
-                    Bitmap bmp = new Bitmap(def_pro_pic);
+                    Bitmap bmp = new Bitmap(Server.MapPath("userimage.png"));
                     bmp.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
 
                     byte[] image = stream.ToArray();
