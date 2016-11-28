@@ -433,7 +433,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="voter\profile-images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

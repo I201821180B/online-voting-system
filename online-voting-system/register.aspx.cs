@@ -31,7 +31,7 @@ namespace online_voting_system
             {
                     String votername, uname, pass, cityname,reg_msg=null,def_pro_pic=null;
 
-                    def_pro_pic = Server.MapPath("./voter/profile-images/userimage.png");
+                    def_pro_pic = Server.MapPath("./userimage.png");
                     MemoryStream stream = new MemoryStream();
                     Bitmap bmp = new Bitmap(def_pro_pic);
                     bmp.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
