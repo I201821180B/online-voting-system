@@ -26,18 +26,9 @@ namespace online_voting_system
 
         protected void reg_button_Click(object sender, EventArgs e)
         {
-            
-            DateTime dateOfBirth = Convert.ToDateTime(dob.Text);
-            DateTime today = DateTime.Now;
-            TimeSpan ts = today - dateOfBirth;
-            DateTime age = DateTime.MinValue + ts;
-
-            int years = age.Year - 1;
             String uname_status = hidden.Value;
             if(uname_status == "username available")
             {
-                if (years > 18)
-                {
                     String votername, uname, pass, cityname,reg_msg=null,def_pro_pic=null;
 
                     def_pro_pic = Server.MapPath("./voter/profile-images/userimage.png");
@@ -76,13 +67,6 @@ namespace online_voting_system
                             Response.Redirect("login.aspx?msg=" + Server.UrlEncode(reg_msg));
                         }
                     con.Close();
-                }
-                else
-                {
-                    reg_msg.Text = "You Cannot Register, Because you are below 18 years of age";
-                    reg_msg.CssClass = "alert alert-danger";
-                    reg_msg.Visible = true;
-                }
             }
             else
             {

@@ -15,13 +15,6 @@
                   <asp:RequiredFieldValidator ID="vname_required" runat="server" ControlToValidate="vname" Text="*" ForeColor="Red" ErrorMessage="Please Enter Name"/>
               </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="dob">Date Of Birth:</label>
-                <div class="col-sm-6">
-                    <asp:TextBox ID="dob" runat="server" CssClass="form-control" TextMode="Date" ToolTip="Enter the Date Of Birth"></asp:TextBox>
-                </div>
-                <asp:RequiredFieldValidator ID="dob_req" runat="server" ControlToValidate="dob" Text="*" ForeColor="Red" ErrorMessage="Please Enter Date Of Birth"/>
-                </div>
-            <div class="form-group">
                 <label class="control-label col-sm-2" for="city">City:</label>
                 <div class="col-sm-6">
                   <asp:TextBox ID="city" runat="server" CssClass="form-control"></asp:TextBox>
