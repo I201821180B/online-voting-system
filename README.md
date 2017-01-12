@@ -3,7 +3,9 @@
 This project is my first project in ASP.NET using WebForms.
 Through this project, I learnt the following :
 
-  1.about developing data-driven web applications in ASP.NET
+  1. About developing data-driven web applications in ASP.NET
+  2. Using SQL Server for connecting with Webforms project
+  3. Deploying through GitHub on Azure cloud
 
 This is a simple e-voting system, which provides the automation of the process of voting.
 
